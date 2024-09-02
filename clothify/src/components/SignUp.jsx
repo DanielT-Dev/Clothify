@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from "../styles/SignUp.module.css"
 
-const Welcome = () => {
+const SignUp = () => {
   return (
     <div className={styles.container}>
         <div className={styles.body}>
@@ -68,4 +68,4 @@ const Welcome = () => {
   )
 }
 
-export default Welcome
+export default SignUp
