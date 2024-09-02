@@ -10,9 +10,16 @@ const Welcome = () => {
                 src="../../assets/welcome2.png"
                 className={styles.image}
             />
+            <img 
+                src="../../assets/logo2.png"
+                className={styles.logo}
+            />
             <h1 className={styles.slogan}>
-                <span>Clothify</span> - Where Fashion Meets Personality
+                Where Fashion Meets Personality
             </h1>
+            <button className={styles.button}>
+              Start
+            </button>
         </div>
     </div>
   )

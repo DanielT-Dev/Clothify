@@ -8,17 +8,32 @@
     .slogan 
     {
         position: absolute;
-        left: 10vw;
-        top: 25vh;
-        width: 80vw;
-        font-size: 3vh;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 400;
+        left: 15vw;
+        top: 50vh;
+        width: 70vw;
+        font-size: 3.7vh;
+        font-weight: 600;
         text-align: center;
     }
-    .body span 
+    .logo 
     {
-        font-weight: 600;
+        position: absolute;
+        left: 15vw;
+        top: 35vh;
+        width: 70vw;
+    }
+    .button 
+    {
+        position: absolute;
+        left: 15vw;
+        bottom: 20vh;
+        width: 70vw;
+        height: 10vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        border: none;
+        border-radius: 10px;
+        font-size: 5vh;
     }
 } 
 @media screen and (min-width: 600px) 
@@ -28,4 +43,5 @@
 body 
 {
     margin: 0px;
+    font-family: "Gothic A1", sans-serif
 }
