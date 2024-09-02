@@ -1,0 +1,31 @@
+@media screen and (max-width: 600px) 
+{
+    .image 
+    {
+        width: 100vw;
+        height: 30vh;
+    }
+    .slogan 
+    {
+        position: absolute;
+        left: 10vw;
+        top: 25vh;
+        width: 80vw;
+        font-size: 3vh;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+    .body span 
+    {
+        font-weight: 600;
+    }
+} 
+@media screen and (min-width: 600px) 
+{
+    
+}
+body 
+{
+    margin: 0px;
+}
