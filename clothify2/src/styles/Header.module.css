@@ -33,6 +33,32 @@
         background-color: #E4CDA7;
         border-radius: 50%;
     }
+    .search input 
+    {
+        background-color: #FFE6BC;
+        margin-left: 3%;
+        margin-top: 1vh;
+        width: 75%;
+        height: 5vh;
+        border: none;
+        border-radius: 15px;
+        font-size: 2vh;
+    }
+    .search button 
+    {
+        margin-left: 2vw;
+        margin-top: 1vw;
+        width: 15vw;
+        height: 13vw;
+        background-color: #1FAB89;
+        border: none;
+        border-radius: 10px;
+    }
+    .search button .icon 
+    {
+        margin-right: 0;
+        margin-top: 0.3vh;
+    }
 }
 @media screen and (min-width: 600px) 
 {
