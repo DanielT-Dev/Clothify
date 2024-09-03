@@ -4,7 +4,11 @@ import styles from "../styles/SignIn.module.css"
 
 import { useClerk, useSignIn } from '@clerk/clerk-react';
 
+import {useNavigate} from "react-router-dom";
+
 const SignIn = () => {
+
+    const navigate = useNavigate();
 
   const { signIn } = useSignIn();
   const [email, setEmail] = useState('');
@@ -69,7 +73,7 @@ const SignIn = () => {
                 </div>
                 <p>
                     Don't have an account? <br/>
-                    <span style={{color: "#C3B091"}}>Sign-Up</span> instead
+                    <span style={{color: "#C3B091"}} onClick={() => navigate("/sign-up")}>Sign-Up</span> instead
                 </p>
                 <button 
                     className={styles.button}

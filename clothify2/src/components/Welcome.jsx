@@ -2,7 +2,12 @@ import React from 'react'
 
 import styles from "../styles/Welcome.module.css"
 
+import {useNavigate} from "react-router-dom";
+
 const Welcome = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
         <div className={styles.body}>
@@ -17,7 +22,7 @@ const Welcome = () => {
             <h1 className={styles.slogan}>
                 Where Fashion Meets Personality
             </h1>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={() => navigate('/sign-up')}>
               Start
             </button>
         </div>

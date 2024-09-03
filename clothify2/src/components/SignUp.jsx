@@ -9,9 +9,14 @@ import Verification from './Verification';
 import VerificationGood from './VerificationGood';
 import VerificationBad from './VerificationBad'
 
+import {useNavigate} from "react-router-dom";
+
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
 
 const SignUp = () => {
+
+    const navigate = useNavigate();
+
     const { signUp, isLoaded } = useSignUp();
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
@@ -154,7 +159,7 @@ const SignUp = () => {
                 </div>
                 <p>
                     Already have an account?
-                    <span style={{color: "#C3B091"}}>Sign-In</span> instead
+                    <span style={{color: "#C3B091"}} onClick={() => navigate("/sign-in")}>Sign-In</span> instead
                 </p>
                 <button 
                     className={styles.button}
