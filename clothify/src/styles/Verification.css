@@ -1,0 +1,71 @@
+.verification-code-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .verification-code-container p 
+  {
+    margin-top: 3vh;
+    font-size: 2.5vh;
+  }
+  .verification-code-container svg 
+  {
+    width: 30px;
+    height: 30px;
+  }
+
+  .verification-code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .verification-code-inputs input {
+    width: 10vw;
+    height: 12vw;
+    text-align: center;
+    font-size: 3.5vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFE6BC;
+    transition: border-color 0.3s ease;
+    font-weight: 600;
+  }
+
+  .verification-code-container form button 
+  {
+    margin-top: 3vh;
+    background-color: #1FAB89;
+    color: #9DF3C4;
+    border: none;
+    width: 40vw;
+    height: 6vh;
+    border-radius: 10px;
+    font-size: 2.5vh;
+  }
+  
+  .verification-code-inputs input:focus {
+    border-color: #999;
+    outline: none;
+  }
+  
+  .resend-button {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 2.5vh;
+    cursor: pointer;
+  }
+  
+  .resend-button:hover {
+    text-decoration: underline;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
