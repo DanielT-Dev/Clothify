@@ -29,7 +29,7 @@ const SignIn = () => {
     <div className={styles.container}>
         <div className={styles.body}>
             <img 
-                src="../../assets/signin1.png"
+                src="/signin1.png"
                 className={styles.image}
             />
             <h1 className={styles.slogan}>

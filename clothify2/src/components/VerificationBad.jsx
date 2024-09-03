@@ -6,7 +6,7 @@ const VerificationBad = () => {
         <h1 style={{textAlign: "center", fontSize: "3vh"}}>
           Verification Failed
         </h1>
-        <img src="../../assets/verificationbad1.png" style={{width: "100%"}}/>
+        <img src="/verificationbad1.png" style={{width: "100%"}}/>
         <p style={{textAlign: "center", fontSize: "2vh"}}>
         We encountered an error while verifying your account
         </p>

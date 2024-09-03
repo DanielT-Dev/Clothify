@@ -76,7 +76,7 @@ const SignUp = () => {
     <div className={styles.container}>
         <div className={styles.body}>
             <img 
-                src="../../assets/signup1.png"
+                src="/signup1.png"
                 className={styles.image}
             />
             <h1 className={styles.slogan}>

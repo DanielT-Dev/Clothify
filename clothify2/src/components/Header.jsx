@@ -10,7 +10,7 @@ const Header = () => {
     <div className={styles.container}>
         <div className={styles.body}>
             <img
-                src="../../assets/logo2.png" 
+                src="/logo2.png" 
                 className={styles.logo}
             />
             <div style={{
@@ -19,11 +19,11 @@ const Header = () => {
                 flexDirection: "row",
             }}>
                 <img 
-                    src="../../assets/icon_search1.png" 
+                    src="/assets/icon_search1.png" 
                     className={styles.icon}
                 />   
                 <img 
-                    src="../../assets/icon_cart1.png" 
+                    src="/assets/icon_cart1.png" 
                     className={styles.icon}
                 />     
                 <div 

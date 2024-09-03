@@ -7,11 +7,11 @@ const Welcome = () => {
     <div className={styles.container}>
         <div className={styles.body}>
             <img 
-                src="../../assets/welcome2.png"
+                src="/welcome2.png"
                 className={styles.image}
             />
             <img 
-                src="../../assets/logo2.png"
+                src="/logo2.png"
                 className={styles.logo}
             />
             <h1 className={styles.slogan}>
