@@ -6,7 +6,7 @@ import { useIdeas } from "../lib/ideas";
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
-
+//
   const ideas = useIdeas();
 
   return (
