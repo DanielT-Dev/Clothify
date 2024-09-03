@@ -7,6 +7,7 @@ import App from './App.jsx'
 import SignUp from "../src/components/SignUp.jsx"
 import SignIn from "../src/components/SignIn.jsx"
 import Home from './components/Home.jsx'
+import Settings from './components/Settings.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home/>,
+  },
+  {
+    path: "/settings",
+    element: <Settings/>,
   },
 ]);
 

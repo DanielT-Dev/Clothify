@@ -7,8 +7,7 @@ import styles from "../styles/SignUp.module.css"
 import Modal from 'react-modal';
 import Verification from './Verification';
 import VerificationGood from './VerificationGood';
-import VerificationBad from './VerificationBad';
-import SignOut from "./SignOut";
+import VerificationBad from './VerificationBad'
 
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
 
@@ -222,8 +221,6 @@ const SignUp = () => {
             >
                 <VerificationBad/>
             </Modal>
-
-            <SignOut/>
         </div>
     </div>
   )

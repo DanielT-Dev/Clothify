@@ -1,8 +1,11 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 import styles from "../styles/Header.module.css"
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
         <div className={styles.body}>
@@ -23,7 +26,10 @@ const Header = () => {
                     src="../../assets/icon_cart1.png" 
                     className={styles.icon}
                 />     
-                <div className={styles.user_circle}>
+                <div 
+                    className={styles.user_circle}
+                    onClick={() => navigate('/settings')}
+                >
                 </div> 
             </div>
         </div>
