@@ -1,0 +1,66 @@
+@media screen and (max-width: 600px)
+{
+    .body
+    {
+        margin-top: 17vh;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 85vw;
+        border-radius: 15px;
+        background-color: #F5F5F5;
+    }
+    .box img 
+    {
+        margin-left: 7.5%;
+        width: 85%;
+        height: 30vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .box .back 
+    {
+        position: absolute;
+        left: 2vw;
+        top: 15vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .box .cart 
+    {
+        position: absolute;
+        right: 10vw;
+        top: 45vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .body h1 
+    {
+        width: 90vw;
+        margin-left: 5vw;
+        font-size: 3vh;
+        text-align: center;
+    }
+    .body button img 
+    {
+        margin-top: 1.9vh;
+        width: 6vh;
+    }
+    .body button
+    {
+        margin-left: 7.5vw;
+        width: 85vw;
+        font-size: 3vh;
+        border: none;
+        border-radius: 15px;
+        background-color: #F5F5F5;
+    }
+    .body span 
+    {
+        background-color: #E4CDA7;
+        padding: 5px;
+        border-radius: 10px;
+    }
+}

@@ -3,10 +3,14 @@ import Header from './Header'
 
 import { useIdeas } from "../lib/ideas";
 
+import { useNavigate } from 'react-router-dom';
+
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
-//
+
+  const navigate = useNavigate();
+
   const ideas = useIdeas();
 
   return (
@@ -19,6 +23,10 @@ const Home = () => {
             <div 
               key={idea.$id}
               className={styles.box}
+              onClick={() => {
+                localStorage.setItem("current_item", JSON.stringify(idea));
+                navigate('/item');
+              }}
             >
               <div style={{display: 'flex', flexDirection: "row"}}>
                 <div className={styles.sale}>

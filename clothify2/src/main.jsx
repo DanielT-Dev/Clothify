@@ -16,6 +16,7 @@ import {
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
+import Item from './components/Item.jsx'
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings/>,
+  },
+  {
+    path: "/item",
+    element: <Item/>,
   },
 ]);
 
