@@ -1,0 +1,40 @@
+@media screen and (max-width: 600px) 
+{
+    .body 
+    {
+        position: absolute;
+        left: 7.5vw;
+        top: 5vh;
+        width: 85vw;
+        height: 8vh;
+        background-color: #FFE6BC;
+        border-radius: 10px;
+    }
+    .logo 
+    {
+        position: absolute;
+        left: 3vw;
+        top: 1.75vh;
+        width: 25vw;
+    }
+    .icon 
+    {
+        margin-right: 3vw;
+        margin-top: 1.75vh;
+        width: 10vw;
+        height: 10vw;
+    }
+    .user_circle 
+    {
+        margin-right: 3vw;
+        margin-top: 1vh;
+        width: 14vw;
+        height: 14vw;
+        background-color: #E4CDA7;
+        border-radius: 50%;
+    }
+}
+@media screen and (min-width: 600px) 
+{
+    
+}
