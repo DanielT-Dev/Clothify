@@ -6,6 +6,10 @@ import styles from "../styles/SignUp.module.css"
 
 import Modal from 'react-modal';
 import Verification from './Verification';
+import VerificationGood from './VerificationGood';
+import VerificationBad from './VerificationBad';
+import SignOut from "./SignOut";
+
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
 
 const SignUp = () => {
@@ -18,7 +22,7 @@ const SignUp = () => {
     const [error, setError] = useState(null);
     const [pendingVerification, setPendingVerification] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [isGood, setIsGood] = useState(0);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -33,7 +37,7 @@ const SignUp = () => {
 
         try {
           // Step 1: Create the sign-up attempt
-          await signUp.create({
+          const response = await signUp.create({
             emailAddress: email,
             password,
             firstName: first_name,
@@ -48,14 +52,7 @@ const SignUp = () => {
           setIsModalOpen(true);
           setError(null);
         } catch (err) {
-          setError(err.errors ? err.errors[0].message : 'An error occurred during sign-up.');
-
-          if (err.errors && err.errors.length > 0) {
-            // Display the first error message from Clerk
-            setError(err.errors[0].message);
-          } else {
-            setError('An error occurred during sign-up.');
-          }
+            console.error('Sign-up error:', err);
         }
       };
     
@@ -66,8 +63,12 @@ const SignUp = () => {
     
           // Redirect or handle successful sign-up (e.g., navigate to a dashboard)
           console.log('Sign-up successful!');
+          setIsGood(1);
+          setIsModalOpen(false);
         } catch (err) {
           setError(err.errors ? err.errors[0].message : 'Invalid verification code.');
+          setIsGood(-1);
+          setIsModalOpen(false);
         }
     };
     
@@ -185,6 +186,44 @@ const SignUp = () => {
                     onClose={() => setIsModalOpen(false)} 
                 />
             </Modal>
+            <Modal
+                isOpen={isGood == 1}
+                onRequestClose={() => setIsGood(0)}
+                style={{
+                    content: {
+                        width: '70vw',
+                        height: "45vh",
+                        margin: 'auto',
+                        textAlign: 'center',
+                        borderRadius: '10px',
+                    },
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    },
+                }}
+            >
+                <VerificationGood/>
+            </Modal>
+            <Modal
+                isOpen={isGood == -1}
+                onRequestClose={() => setIsGood(0)}
+                style={{
+                    content: {
+                        width: '70vw',
+                        height: "43vh",
+                        margin: 'auto',
+                        textAlign: 'center',
+                        borderRadius: '10px',
+                    },
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    },
+                }}
+            >
+                <VerificationBad/>
+            </Modal>
+
+            <SignOut/>
         </div>
     </div>
   )
