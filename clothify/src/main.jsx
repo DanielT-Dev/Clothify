@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import SignUp from "../src/components/SignUp.jsx"
 import SignIn from "../src/components/SignIn.jsx"
+import Home from './components/Home.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +14,7 @@ import {
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
+
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/sign-in",
     element: <SignIn/>,
+  },
+  {
+    path: "/home",
+    element: <Home/>,
   },
 ]);
 
