@@ -10,7 +10,7 @@
         margin-top: 3vh;
         width: 85vw;
         background-color: #F5F5F5;
-        height: 10vh;
+        height: 10.5vh;
         border-radius: 10px;
     }
     .box 
@@ -58,6 +58,7 @@
     }
     .box button img 
     {
+        margin-top: 0.3vh;
         width: 3.5vh;
         height: 3.5vh;
     }

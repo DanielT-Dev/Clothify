@@ -79,6 +79,14 @@ const Cart = () => {
         }
     }, [userDocument, ideas]);
 
+    const handleShowNotification = () => {
+        setShowNotification(true);
+        setTimeout(() => {
+          setShowNotification(false);
+        }, 3000); // Automatically close after 3 seconds
+      };
+
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -121,11 +129,11 @@ const Cart = () => {
                         </div>
                         <div stlye={{display: "flex", flexDirection: "column", marginLeft: "3vw"}} className={styles.grid}>
                             <div className={styles.sale} style={{display: idea.sale[0] != "0" ? "block" : "none"}}>
-                            <p style={{backgroundColor: "#E4CDA7", padding: "0.2vh", borderRadius: "10px"}}>
+                            <p style={{backgroundColor: "#E4CDA7", padding: "0.2vh", borderRadius: "10px", fontSize: "1.75vh"}}>
                                 {idea.sale}
                             </p>
                             </div>
-                            <div className={styles.sale} style={{backgroundColor: "transparent", fontWeight: "600", marginTop: idea.sale[0] != "0" ? "0vh" : "4.2vh"}}>
+                            <div className={styles.sale} style={{fontSize: "1.75vh", backgroundColor: "transparent", fontWeight: "600", marginTop: idea.sale[0] != "0" ? "0vh" : "4.4vh"}}>
                             {idea.price}
                             </div>
                         </div>
