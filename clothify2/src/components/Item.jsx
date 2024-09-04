@@ -27,7 +27,11 @@ const Item = () => {
                 />
             </div>
             <h1>
-                <span>{item.sale} SALE</span> {item.price}
+                {   
+                    item.sale[0] != "0" &&
+                    <span>{item.sale} SALE</span>
+                }
+                 {item.price}
             </h1>
             <h1>
                 {item.title}

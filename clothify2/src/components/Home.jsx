@@ -54,7 +54,7 @@ const Home = () => {
               }}
             >
               <div style={{display: 'flex', flexDirection: "row"}}>
-                <div className={styles.sale}>
+                <div className={styles.sale} style={{visibility: idea.sale[0] != "0" ? "visible" : "hidden"}}>
                   <p>
                     {idea.sale}
                   </p>

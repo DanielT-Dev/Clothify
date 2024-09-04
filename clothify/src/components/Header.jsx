@@ -2,9 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from "../styles/Header.module.css"
 
+
 const Header = () => {
 
     const navigate = useNavigate();
+
+    
 
   return (
     <div className={styles.container}>

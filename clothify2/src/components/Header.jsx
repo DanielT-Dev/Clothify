@@ -6,9 +6,17 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
 
+import { useUser } from '@clerk/clerk-react';
+
 const Header = () => {
     const [showSearchModal, setShowSearchModal] = useState(false);
     const navigate = useNavigate();
+
+    const { user } = useUser();
+
+    if (!user) {
+        return <div>Loading...</div>;
+    }
 
   return ( 
     <div className={styles.container}>
@@ -35,7 +43,11 @@ const Header = () => {
                 <div 
                     className={styles.user_circle}
                     onClick={() => navigate('/settings')}
+                    style={{textAlign: "center", fontSize: "4vh", fontWeight:"600", alignItems: "center", justifyContent: "center", display: "flex"}}
                 >
+                    <p style={{marginTop: "4.75vh"}}>
+                        {user.firstName[0]}
+                    </p>
                 </div> 
             </div>
             <Modal
