@@ -23,3 +23,13 @@ export const getDocumentByField = async (databaseId, collectionId, field, value)
       throw new Error('Error retrieving document: ' + error.message);
   }
 };
+
+export const updateDocument = async (databaseId, collectionId, documentId, updateData) => {
+    try {
+        const response = await databases.updateDocument(databaseId, collectionId, documentId, updateData);
+        return response;
+    } catch (error) {
+        console.error('Error updating document:', error);
+        throw error; // Rethrow error to be handled by the caller
+    }
+};

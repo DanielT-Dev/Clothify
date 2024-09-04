@@ -5,64 +5,90 @@ import Header from "./Header"
 
 import { useUser } from '@clerk/clerk-react';
 
-import { getDocumentByField } from '../lib/appwrite';
+import { getDocumentByField, updateDocument } from '../lib/appwrite';
 
 import { useIdeas } from "../lib/ideas";
+
+import Notification from './Notification';
 
 const Cart = () => {
 
     const { user } = useUser();
-
-    const [userDocument, setUserDocument] = useState();
-    const [loading, setLoading] = useState(false);
+    const [userDocument, setUserDocument] = useState(null);
+    const [documentId, setDocumentId] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [ideas, setIdeas] = useState(null);
+    const [total, setTotal] = useState(0);
+    const [showNotification, setShowNotification] = useState(false);
 
     const database_id = import.meta.env.VITE_APPWRITE_DATABASE_ID;
     const users_collection_id = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
 
-    const [ideas, setIdeas] = useState(null);
     const ideasData = useIdeas();
 
     useEffect(() => {
-        // Update the state when `ideasData` changes
         setIdeas(ideasData);
-    }, [ideasData]); // Dependency array ensures this runs when `ideasData` changes
+    }, [ideasData]);
 
     useEffect(() => {
-        // Log the `ideas` state when it updates
-        console.log('Updated ideas:', ideas);
-    }, [ideas]); // Dependency array ensures this runs when `ideas` changes
+        if (user) {
+            const handleGetDocument = async () => {
+                setLoading(true);
+                setError(null);
+                try {
+                    const result = await getDocumentByField(
+                        database_id,
+                        users_collection_id,
+                        'email',
+                        user.emailAddresses[0].emailAddress
+                    );
 
-    useEffect(() => {
-        const handleGetDocument = async () => {
-            setLoading(true);
-            setError(null);
-            try {
-                const result = await getDocumentByField(
-                    database_id, 
-                    users_collection_id, 
-                    'email', 
-                    "danieltrusca1@outlook.com",
-                );
-
-                if (result) {
-                    setUserDocument(result);
+                    if (result) {
+                        setUserDocument({
+                            first_name: result.first_name,
+                            last_name: result.last_name,
+                            email: result.email,
+                            cart: result.cart,
+                        });
+                        setDocumentId(result.$id);
+                    } else {
+                        setError('No document found with the specified field value.');
+                    }
+                } catch (error) {
+                    setError('Error retrieving document: ' + error.message);
+                } finally {
                     setLoading(false);
-                } else {
-                    setError('No document found with the specified field value.');
                 }
-            } catch (error) {
-                setError('Error retrieving document: ' + error.message);
-            } finally {
-                setLoading(false);
-            }
+            };
+
+            handleGetDocument();
         }
+    }, [user]);
 
-        handleGetDocument();
-    }, [database_id, users_collection_id])
+    useEffect(() => {
+        if (userDocument && ideas) {
+            const totalPrice = ideas.current
+                .filter((idea) => userDocument.cart.includes(idea.item_id))
+                .reduce((accumulator, currentValue) => {
+                    const numericValue = parseFloat(currentValue.price.replace(/[^0-9.-]+/g, ''));
+                    return accumulator + numericValue;
+                }, 0);
 
-    if (!user || loading) {
-        return <div>Loading...</div>;
+            setTotal(totalPrice);
+        }
+    }, [userDocument, ideas]);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!user) {
+        return <div>No user found.</div>;
     }
 
 
@@ -79,15 +105,17 @@ const Cart = () => {
                     {user.firstName}'s Shopping List
                 </h1>
             </div>
+            <h1 style={{fontSize: "2vh", marginLeft: "7.5vw"}}>
+                Total Items: {ideas && ideas.current.filter((idea) => userDocument.cart.includes(idea.item_id)).length}
+            </h1>
+            <h1 style={{fontSize: "2vh", marginLeft: "7.5vw"}}>
+                Total Price: ${total}
+            </h1>
             {
                 ideas && ideas.current.filter((idea) => userDocument.cart.includes(idea.item_id)).map((idea) => (
                     <div 
                     key={idea.$id}
                     className={styles.box}
-                    onClick={() => {
-                        localStorage.setItem("current_item", JSON.stringify(idea));
-                        navigate('/item');
-                    }}
                     >
                         <div style={{width: "3vw"}}>
                         </div>
@@ -103,13 +131,19 @@ const Cart = () => {
                         </div>
                     <img src={idea.image_url} className={styles.item_image}/>
                     <h1>{idea.title}</h1>
-                    <button>
+                    <button onClick={() => {updateDocument(database_id, users_collection_id, documentId, {...userDocument, cart: userDocument.cart.filter(item => item !== idea.item_id)}); handleShowNotification();}}>
                         <img src="/remove1.png"/>
                     </button>
                     </div>
                 ))
             }
         </div>
+        {   showNotification && (
+            <Notification 
+              message="Item removed from shopping list." 
+              onClose={() => setShowNotification(false)} 
+            />
+          )}
     </div>
   )
 }

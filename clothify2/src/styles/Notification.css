@@ -1,33 +1,50 @@
 .notification {
-    position: fixed;
-    top: 2vh;
-    right: 3vw;
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: fixed;
+  top: 2vh;
+  right: -300px; /* Start off-screen */
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: right 0.3s ease-in-out; /* Smooth slide effect */
+}
+
+.notification.show {
+  right: 3vw; /* End position */
+}
+
+.notification.slide-in {
+  animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+  from {
+      right: -300px; /* Start off-screen */
   }
-  
-  .notification p {
-    margin: 0;
-    padding-right: 10px;
+  to {
+      right: 3vw; /* End position */
   }
-  
-  .notification button {
-    background-color: #ff5e57;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .notification button:hover {
-    background-color: #e04c4b;
-  }
-  
+}
+
+.notification p {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.notification button {
+  background-color: #ff5e57;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.notification button:hover {
+  background-color: #e04c4b;
+}
