@@ -11,6 +11,7 @@ import Modal from 'react-modal';
 import PriceSlider from './PriceSlider';
 import Brands from './Brands';
 import Notification from './Notification';
+import Footer from './Footer';
 
 Modal.setAppElement('#root');
 
@@ -102,6 +103,7 @@ const Home = () => {
             />
           )}
         </div>
+        <Footer/>
     </div>
   )
 }
