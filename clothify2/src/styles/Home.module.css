@@ -4,6 +4,37 @@
     {
         margin-top: 16vh;
     }
+    .filter  
+    {
+        margin-left: 7.5vw;
+        font-size: 2.5vh;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        background-color: #F5F5F5;
+        border: none;
+        border-radius: 10px;
+    }
+    .filter img 
+    {
+        margin-top: 2.5vh;
+        margin-right: 1vw;
+        width: 7vw;
+    }
+    .filter_modal h1
+    {
+        font-size: 3vh;
+    }
+    .filter_modal button 
+    {
+        margin-top: 3vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        width: 85%;
+        height: 7vh;
+        border: none;
+        border-radius: 10px;
+        font-size: 3.2vh;
+    }
     .box
     {
         background-color: #F5F5F5;
