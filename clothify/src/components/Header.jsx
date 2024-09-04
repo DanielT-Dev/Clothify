@@ -28,6 +28,7 @@ const Header = () => {
                 <img 
                     src="../../assets/icon_cart1.png" 
                     className={styles.icon}
+                    onClick={() => navigate('/cart')}
                 />     
                 <div 
                     className={styles.user_circle}

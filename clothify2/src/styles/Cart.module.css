@@ -1,0 +1,70 @@
+@media screen and (max-width: 600px)
+{
+    .body 
+    {
+        margin-top: 17vh;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 85vw;
+        background-color: #F5F5F5;
+        height: 10vh;
+        border-radius: 10px;
+    }
+    .box 
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    .item_image
+    {
+        margin-left: 4vw;
+        margin-top: 0.75vh;
+        width: 7vh;
+        height: 7vh;
+        border-radius: 15px;
+        border: 8px solid #FFE6BC;
+    }
+    .box h1 
+    {
+        width: 35%;
+        height: 100%;
+        margin-left: 3vw;
+        margin-right: 2vw;
+        margin-top: 0vh;
+        font-size: 1.75vh;
+        
+        text-align: left;
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+    .box p 
+    {
+        font-weight: 600;
+    }
+    .box button 
+    {
+        position: absolute;
+        right: 10.5vw;
+        margin-top: 2.75vh;
+        background-color: #E97777;
+        border: none;
+        border-radius: 15px;
+        height: 5vh;
+        width: 5vh;
+    }
+    .box button img 
+    {
+        width: 3.5vh;
+        height: 3.5vh;
+    }
+    .gird 
+    {
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+}

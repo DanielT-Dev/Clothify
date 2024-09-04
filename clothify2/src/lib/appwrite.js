@@ -1,4 +1,4 @@
-import { Client, Databases, Account } from "appwrite";
+import { Client, Databases, Account, Query } from "appwrite";
 
 const client = new Client();
 client
@@ -7,3 +7,19 @@ client
 
 export const account = new Account(client);
 export const databases = new Databases(client);
+
+export const getDocumentByField = async (databaseId, collectionId, field, value) => {
+  try {
+      const response = await databases.listDocuments(databaseId, collectionId, [
+          Query.equal(field, value)
+      ]);
+
+      if (response.documents.length > 0) {
+          return response.documents[0];
+      } else {
+          return null;
+      }
+  } catch (error) {
+      throw new Error('Error retrieving document: ' + error.message);
+  }
+};

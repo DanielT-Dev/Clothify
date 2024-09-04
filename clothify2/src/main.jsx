@@ -17,6 +17,7 @@ import {
 import { ClerkProvider } from '@clerk/clerk-react'
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
 import Item from './components/Item.jsx'
+import Cart from "./components/Cart.jsx"
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -53,12 +54,18 @@ const router = createBrowserRouter([
     path: "/item",
     element: <Item/>,
   },
+  {
+    path: "/cart",
+    element: <Cart/>,
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <RouterProvider router={router} />
+      <IdeasProvider>
+        <RouterProvider router={router} />
+      </IdeasProvider>
     </ClerkProvider>
   </StrictMode>,
 )

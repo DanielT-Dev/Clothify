@@ -16,6 +16,7 @@ import {
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
+import Cart from '../../clothify2/src/components/Cart.jsx'
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -48,12 +49,19 @@ const router = createBrowserRouter([
     path: "/settings",
     element: <Settings/>,
   },
+  {
+    path: "/cart",
+    element: 
+    <IdeasProvider>
+      <Cart/>
+    </IdeasProvider>,
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <RouterProvider router={router} />
+      
     </ClerkProvider>
   </StrictMode>,
 )
