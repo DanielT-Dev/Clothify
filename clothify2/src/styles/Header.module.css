@@ -43,6 +43,7 @@
         border: none;
         border-radius: 15px;
         font-size: 2vh;
+        padding-left: 10px;
     }
     .search button 
     {

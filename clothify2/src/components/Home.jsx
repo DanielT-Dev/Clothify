@@ -25,6 +25,8 @@ const Home = () => {
 
   const [showNotification, setShowNotification] = useState(false);
 
+  const [searchFilter, setSearchFilter] = useState("");
+
   const handleShowNotification = () => {
     setShowNotification(true);
     setTimeout(() => {
@@ -42,8 +44,6 @@ const Home = () => {
     fila: false,
   });
 
-  const [filteredItems, setFilteredItems] = useState([]);
-
   const [trueSelectedBrands, setTrueSelectedBrands] = useState([]);
 
   useEffect(() => {
@@ -55,8 +55,14 @@ const Home = () => {
   return (
     
     <div>
-        <Header/>
+        <Header setSearchFilter={setSearchFilter}/>
         <div className={styles.body}>
+          {
+            searchFilter != "" && 
+            <h1 style={{fontSize: "2.25vh", marginLeft: "7.5vw"}}>
+              Showing results for: "{searchFilter}"
+            </h1>
+          }
         <button className={styles.filter} style={{display: "flex", flexDirection: "row"}}  onClick={() => setShowFilterModal(true)}>
           <img src="/filter1.png"/>
           <p>
@@ -65,7 +71,7 @@ const Home = () => {
         </button>
         {
           trueSelectedBrands.length === 0 ?
-          ideas.current.map((idea) => (
+          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).map((idea) => (
             <div 
               key={idea.$id}
               className={styles.box}
@@ -89,7 +95,7 @@ const Home = () => {
             </div>
           ))
           :
-          ideas.current.filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
+          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
             <div 
               key={idea.$id}
               className={styles.box}
@@ -138,7 +144,7 @@ const Home = () => {
                     selectedBrands={selectedBrands}
                     setSelectedBrands={setSelectedBrands}
                   />
-                  <button onClick={() => {setShowFilterModal(false); handleShowNotification()}}>
+                  <button onClick={() => {setShowFilterModal(false); handleShowNotification();}}>
                     Save
                   </button>
               </div>

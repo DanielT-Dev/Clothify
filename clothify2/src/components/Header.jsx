@@ -8,11 +8,17 @@ Modal.setAppElement('#root'); // Set the app element for accessibility (importan
 
 import { useUser } from '@clerk/clerk-react';
 
-const Header = () => {
+const Header = ({setSearchFilter}) => {
     const [showSearchModal, setShowSearchModal] = useState(false);
     const navigate = useNavigate();
 
     const { user } = useUser();
+
+    const [query, setQuery] = useState("");
+
+    const handleSearch = () => {
+        setSearchFilter(query);
+    }
 
     if (!user) {
         return <div>Loading...</div>;
@@ -78,8 +84,8 @@ const Header = () => {
                         </h1>
                     </div>
                     <div style={{display: "flex", flexDirection: "row"}}>
-                        <input type="text"/>
-                        <button>
+                        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)}/>
+                        <button onClick={handleSearch}>
                             <img 
                                 src="/ok2.png" 
                                 className={styles.icon}
