@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Brands.css'; // Import the CSS file for styling
 
-function Brands() {
-  const [selectedBrands, setSelectedBrands] = useState({
-    nike: false,
-    adidas: false,
-    puma: false,
-    reebok: false,
-    underArmour: false,
-    newBalance: false,
-    fila: false,
-  });
+function Brands({selectedBrands, setSelectedBrands}) {
 
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;

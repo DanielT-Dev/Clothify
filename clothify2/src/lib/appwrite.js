@@ -1,4 +1,4 @@
-import { Client, Databases, Account, Query } from "appwrite";
+import { Client, Databases, Account, Query, ID } from "appwrite";
 
 const client = new Client();
 client
@@ -33,3 +33,13 @@ export const updateDocument = async (databaseId, collectionId, documentId, updat
         throw error; // Rethrow error to be handled by the caller
     }
 };
+
+export const createDocument = async (databaseId, collectionId, data) => {
+    try {
+        const response = await databases.updateDocument(databaseId, collectionId, ID.unique(), data);
+        return response;
+    } catch (error) {
+        console.error('Error creating document:', error);
+        throw error; 
+    }
+}

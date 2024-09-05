@@ -11,6 +11,8 @@ import VerificationBad from './VerificationBad'
 
 import {useNavigate} from "react-router-dom";
 
+import {createDocument} from "../lib/appwrite";
+
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
 
 const SignUp = () => {
@@ -27,6 +29,9 @@ const SignUp = () => {
     const [pendingVerification, setPendingVerification] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isGood, setIsGood] = useState(0);
+
+    const database_id = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+    const users_collection_id = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -66,6 +71,14 @@ const SignUp = () => {
           await signUp.attemptEmailAddressVerification({ code });
     
           // Redirect or handle successful sign-up (e.g., navigate to a dashboard)
+
+          await createDocument(database_id, users_collection_id, {
+            first_name,
+            last_name,
+            email,
+            cart: [],
+          })
+
           console.log('Sign-up successful!');
           setIsGood(1);
           setIsModalOpen(false);

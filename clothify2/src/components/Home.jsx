@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
 
 import { useIdeas } from "../lib/ideas";
@@ -32,6 +32,26 @@ const Home = () => {
     }, 3000); // Automatically close after 3 seconds
   };
 
+  const [selectedBrands, setSelectedBrands] = useState({
+    nike: false,
+    adidas: false,
+    puma: false,
+    reebok: false,
+    underArmour: false,
+    newBalance: false,
+    fila: false,
+  });
+
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const [trueSelectedBrands, setTrueSelectedBrands] = useState([]);
+
+  useEffect(() => {
+    const t = Object.entries(selectedBrands);
+    const filtered_t = t.filter(([key, value]) => value === true);
+    setTrueSelectedBrands(filtered_t);
+  }, [selectedBrands])
+
   return (
     
     <div>
@@ -44,7 +64,32 @@ const Home = () => {
           </p>
         </button>
         {
+          trueSelectedBrands.length === 0 ?
           ideas.current.map((idea) => (
+            <div 
+              key={idea.$id}
+              className={styles.box}
+              onClick={() => {
+                localStorage.setItem("current_item", JSON.stringify(idea));
+                navigate('/item');
+              }}
+            >
+              <div style={{display: 'flex', flexDirection: "row"}}>
+                <div className={styles.sale} style={{visibility: idea.sale[0] != "0" ? "visible" : "hidden"}}>
+                  <p>
+                    {idea.sale}
+                  </p>
+                </div>
+                <div className={styles.sale} style={{marginLeft: "73%", backgroundColor: "transparent"}}>
+                  {idea.price}
+                </div>
+              </div>
+              <img src={idea.image_url}/>
+              <h1>{idea.title}</h1>
+            </div>
+          ))
+          :
+          ideas.current.filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
             <div 
               key={idea.$id}
               className={styles.box}
@@ -89,7 +134,10 @@ const Home = () => {
                   Filter Items
                 </h1>
                   <PriceSlider/>
-                  <Brands/>
+                  <Brands 
+                    selectedBrands={selectedBrands}
+                    setSelectedBrands={setSelectedBrands}
+                  />
                   <button onClick={() => {setShowFilterModal(false); handleShowNotification()}}>
                     Save
                   </button>
