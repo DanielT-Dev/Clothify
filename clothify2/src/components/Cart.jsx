@@ -10,8 +10,11 @@ import { getDocumentByField, updateDocument } from '../lib/appwrite';
 import { useIdeas } from "../lib/ideas";
 
 import Notification from './Notification';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+
+    const navigate = useNavigate();
 
     const { user } = useUser();
     const [userDocument, setUserDocument] = useState(null);
@@ -142,7 +145,7 @@ const Cart = () => {
                             {idea.price}
                             </div>
                         </div>
-                    <img src={idea.image_url} className={styles.item_image}/>
+                    <img src={idea.image_url} className={styles.item_image} onClick={() => {localStorage.setItem("current_item", JSON.stringify(idea)); navigate("/item")}}/>
                     <h1>{idea.title}</h1>
                     <button onClick={() => {updateDocument(database_id, users_collection_id, documentId, {...userDocument, cart: userDocument.cart.filter(item => item !== idea.item_id)}); handleShowNotification();}}>
                         <img src="/remove1.png"/>
