@@ -18,6 +18,8 @@ const Header = ({setSearchFilter}) => {
 
     const handleSearch = () => {
         setSearchFilter(query);
+        localStorage.setItem('searchFilter', query);
+        navigate('/home');
     }
 
     if (!user) {
@@ -84,7 +86,7 @@ const Header = ({setSearchFilter}) => {
                         </h1>
                     </div>
                     <div style={{display: "flex", flexDirection: "row"}}>
-                        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)}/>
+                        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} autoFocus/>
                         <button onClick={handleSearch}>
                             <img 
                                 src="/ok2.png" 

@@ -25,7 +25,7 @@ const Home = () => {
 
   const [showNotification, setShowNotification] = useState(false);
 
-  const [searchFilter, setSearchFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState(localStorage.getItem('searchFilter'));
 
   const handleShowNotification = () => {
     setShowNotification(true);

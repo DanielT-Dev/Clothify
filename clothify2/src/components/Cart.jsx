@@ -21,6 +21,11 @@ const Cart = () => {
     const [ideas, setIdeas] = useState(null);
     const [total, setTotal] = useState(0);
     const [showNotification, setShowNotification] = useState(false);
+    const [searchFilter, setSearchFilter] = useState("");
+
+    useEffect(() => {
+        localStorage.setItem("searchFilter", searchFilter);
+    }, [searchFilter]);
 
     const database_id = import.meta.env.VITE_APPWRITE_DATABASE_ID;
     const users_collection_id = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
@@ -102,7 +107,7 @@ const Cart = () => {
 
   return (
     <div className={styles.container}>
-        <Header/>
+        <Header setSearchFilter={setSearchFilter}/>
         <div className={styles.body}>
             <div style={{display: "flex", flexDirection: "row"}}>
                 <img 
