@@ -63,4 +63,21 @@
         padding: 5px;
         border-radius: 10px;
     }
+    .body ul 
+    {
+        border-radius: 15px;
+        padding: 6vw;
+        margin-left: 7.5vw;
+        width: 73vw;
+        background-color: #F5F5F5;
+        list-style-type: none;
+    }
+    .body li 
+    {
+        padding-bottom: 0.3vh;
+        margin-bottom: 2vh;
+        border-bottom: 2px solid rgb(230, 230, 230);
+        height: 3vh;
+        font-size: 2.5vh;
+    }
 }

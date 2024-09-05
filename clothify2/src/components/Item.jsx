@@ -72,6 +72,14 @@ const Item = () => {
         }, 3000); // Automatically close after 3 seconds
       };
 
+      // Shoe sizes: 36 to 46
+    const shoeSizes = Array.from({ length: 11 }, (_, i) => 36 + i); // Creates an array [36, 37, ..., 46]
+
+    // Clothing sizes: S, M, L, XL, XXL
+    const clothingSizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
+    const [showSizes, setShowSizes] = useState(false);
+
     if (!user || loading) {
         return <div>Loading...</div>;
     }
@@ -103,14 +111,47 @@ const Item = () => {
             <h1>
                 {item.title}
             </h1>
-            <button style={{display: "flex", flexDirection: "row"}}>
-                <img 
-                    src="/dropdown1.png"
-                />
+            <button 
+                style={{display: "flex", flexDirection: "row"}} 
+                onClick={() => setShowSizes(!showSizes)}
+            >
+                {
+                    !showSizes
+                    ? <img 
+                        src="/dropdown1.png"
+
+                    />
+                    : <img 
+                        src="/up1.png"
+                        style={{scale: "0.7"}}
+                    />
+                }
                 <p>
                     Choose Size
                 </p>
             </button>
+            {
+                showSizes &&
+                <div>
+                    {
+                        !item.isCloth &&
+                        <ul>
+                            {shoeSizes.map((size) => (
+                            <li key={size}> {size}</li>
+                            ))}
+                        </ul>
+                    }
+                    {
+                        item.isCloth &&
+                        <ul>
+                        {clothingSizes.map((size) => (
+                        <li key={size}>{size}</li>
+                        ))}
+                    </ul>
+                    }
+                </div>
+            }
+            
         </div>
         {   showNotification && (
             <Notification 
