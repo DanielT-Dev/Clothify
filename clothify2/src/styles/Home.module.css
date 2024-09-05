@@ -37,12 +37,37 @@
     }
     .box
     {
+        display: inline-block;
         background-color: #F5F5F5;
-        width: 79vw;
+        width: 80vw;
         margin-left: 7.5vw;
         margin-top: 3vh;
         border-radius: 15px;
         padding: 3vw;
+    }
+    .grid_container 
+    {
+        margin-left: 5vw;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .grid_container .box 
+    {
+        width: 37vw !important;
+        height: 25vh !important;
+        margin-left: 0vw;
+        margin-right: 3vw !important;
+    }
+    .grid_container .box img 
+    {
+        margin-left: 5% !important;
+        width: 90% !important;
+        height: 15vh !important;
+    }
+    .grid_container .box h1 
+    {
+        font-size: 1.75vh !important;
+        text-align: center !important;
     }
     .box h1 
     {
@@ -53,7 +78,7 @@
     {
         margin-left: 5%;
         width: 90%;
-        height: 30vh;
+        height: 25vh;
     }
     .box .sale 
     {

@@ -27,6 +27,8 @@ const Home = () => {
 
   const [searchFilter, setSearchFilter] = useState(localStorage.getItem('searchFilter'));
 
+  const [grid, setGrid] = useState(false);
+
   const handleShowNotification = () => {
     setShowNotification(true);
     setTimeout(() => {
@@ -52,6 +54,10 @@ const Home = () => {
     setTrueSelectedBrands(filtered_t);
   }, [selectedBrands])
 
+  useEffect(() => {
+
+  }, [grid]);
+
   return (
     
     <div>
@@ -63,12 +69,36 @@ const Home = () => {
               Showing results for: "{searchFilter}"
             </h1>
           }
-        <button className={styles.filter} style={{display: "flex", flexDirection: "row"}}  onClick={() => setShowFilterModal(true)}>
-          <img src="/filter1.png"/>
-          <p>
-            Filter items
-          </p>
-        </button>
+        <div style={{display: "flex", flexDirection: "row"}}>
+          <button className={styles.filter} style={{display: "flex", flexDirection: "row"}}  onClick={() => setShowFilterModal(true)}>
+            <img src="/filter1.png"/>
+            <p>
+              Filter items
+            </p>
+          </button>
+          <button className={styles.filter} style={{display: "flex", flexDirection: "row"}} onClick={() => setGrid(!grid)}>
+            {
+              !grid &&
+              <>
+                <img src="/grid1.png" style={{scale: "0.75"}}/>
+                <p>
+                  Grid View
+                </p>
+              </>
+            }
+             {
+              grid &&
+              <>
+                <img src="/list1.png" style={{scale: "0.75"}}/>
+                <p>
+                  List View
+                </p>
+              </>
+            }
+          </button>
+        </div>
+        
+        <div className={`${grid ? styles.grid_container : ''}`}>
         {
           trueSelectedBrands.length === 0 ?
           ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).map((idea) => (
@@ -86,7 +116,7 @@ const Home = () => {
                     {idea.sale}
                   </p>
                 </div>
-                <div className={styles.sale} style={{marginLeft: "73%", backgroundColor: "transparent"}}>
+                <div className={styles.sale} style={{marginLeft: grid ? "50%" : "73%", backgroundColor: "transparent"}}>
                   {idea.price}
                 </div>
               </div>
@@ -110,7 +140,7 @@ const Home = () => {
                     {idea.sale}
                   </p>
                 </div>
-                <div className={styles.sale} style={{marginLeft: "73%", backgroundColor: "transparent"}}>
+                <div className={styles.sale} style={{marginLeft: grid ? "50%" : "73%", backgroundColor: "transparent"}}>
                   {idea.price}
                 </div>
               </div>
@@ -119,6 +149,7 @@ const Home = () => {
             </div>
           ))
         }
+        </div>
         <Modal
                 isOpen={showFilterModal}
                 onRequestClose={() => setShowFilterModal(false)}
