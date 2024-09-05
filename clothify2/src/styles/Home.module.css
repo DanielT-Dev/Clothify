@@ -68,7 +68,18 @@
     {
         font-size: 1.75vh !important;
         text-align: center !important;
+        display: -webkit-box;            /* Enables the webkit-based flexible box layout */
     }
+    .overflow_dots {
+        display: -webkit-box;              /* Enables the webkit-based flexible box layout */
+        line-clamp: 2; 
+        -webkit-line-clamp: 2;             /* Limits the text to 2 lines */
+        -webkit-box-orient: vertical;      /* Specifies the box orientation as vertical */
+        overflow: hidden;                  /* Ensures content is hidden if it overflows */
+        position: relative;                /* Sets up a context for the pseudo-element */
+        line-height: 1.5em;                /* Adjust this based on your font size and desired line height */
+        max-height: 3em;                   /* Adjust height for two lines based on line height */
+      }
     .box h1 
     {
         font-size: 2vh;
@@ -78,7 +89,7 @@
     {
         margin-left: 5%;
         width: 90%;
-        height: 25vh;
+        height: 28vh;
     }
     .box .sale 
     {

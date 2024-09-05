@@ -116,12 +116,20 @@ const Home = () => {
                     {idea.sale}
                   </p>
                 </div>
-                <div className={styles.sale} style={{marginLeft: grid ? "50%" : "73%", backgroundColor: "transparent"}}>
+                <div className={styles.sale} style={{marginLeft: grid ? "33%" : "65%", backgroundColor: "transparent", display: 'flex', flexDirection: "row", marginTop: "-1vh"}}>
+                <p>
                   {idea.price}
+                </p>
+                
+                {
+                idea.sale[0] != "0" && <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
+                    &nbsp;${(parseFloat(idea.price.replace('$', ''))/(1-parseFloat(idea.sale.replace('%', ''))/100))}
+                  </p>
+                }
                 </div>
               </div>
               <img src={idea.image_url}/>
-              <h1>{idea.title}</h1>
+              <h1 className={styles.overflow_dots}>{idea.title}</h1>
             </div>
           ))
           :
@@ -140,12 +148,18 @@ const Home = () => {
                     {idea.sale}
                   </p>
                 </div>
-                <div className={styles.sale} style={{marginLeft: grid ? "50%" : "73%", backgroundColor: "transparent"}}>
+                <div className={styles.sale} style={{marginLeft: grid ? "33%" : "65%", backgroundColor: "transparent", display: 'flex', flexDirection: "row", marginTop: "-1vh"}}>
+                <p>
                   {idea.price}
+                </p>
+                {idea.sale[0] != "0" && <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
+                    ${(parseFloat(idea.price.replace('$', ''))/(1-parseFloat(idea.sale.replace('%', ''))/100))}
+                  </p>
+                }
                 </div>
               </div>
               <img src={idea.image_url}/>
-              <h1>{idea.title}</h1>
+              <h1 className={styles.overflow_dots}>{idea.title}</h1>
             </div>
           ))
         }
