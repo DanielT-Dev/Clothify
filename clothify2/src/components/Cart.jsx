@@ -154,7 +154,7 @@ const Cart = () => {
                 ))
             }
         </div>
-        <button className={styles.continue}>
+        <button className={styles.continue} onClick={() => navigate("/payment")}>
             Confirm Items & Continue to Payment
         </button>
         {   showNotification && (

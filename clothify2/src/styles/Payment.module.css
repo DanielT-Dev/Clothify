@@ -1,4 +1,5 @@
-/* Payment.module.css */
+@media screen and (max-width: 600px)
+{
 
 section {
     display: flex;
@@ -74,3 +75,4 @@ section {
     text-align: center;
   }
   
+}
