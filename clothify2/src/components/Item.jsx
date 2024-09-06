@@ -106,7 +106,15 @@ const Item = () => {
                     item.sale[0] != "0" &&
                     <span>{item.sale} SALE</span>
                 }
-                 {item.price}
+                <div style={{display: "flex", flexDirection: "row", marginLeft: "28vw", width: "33vw", alignItems: "center", justifyContent: "center"}}>
+                    <p>
+                        {item.price}
+                    </p>
+                    <p style={{marginLeft: "3vw", textDecoration: "line-through", textDecorationStyle: "double"}}>
+                        ${(parseFloat(item.price.replace('$', ''))/(1-parseFloat(item.sale.replace('%', ''))/100))}
+                    </p>
+                </div>
+                 
             </h1>
             <h1>
                 {item.title}
