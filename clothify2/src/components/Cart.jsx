@@ -154,7 +154,7 @@ const Cart = () => {
                 ))
             }
         </div>
-        <button className={styles.continue} onClick={() => navigate("/payment")}>
+        <button className={styles.continue} onClick={() => {navigate("/payment"); localStorage.setItem("total_price", total)}}>
             Confirm Items & Continue to Payment
         </button>
         {   showNotification && (
