@@ -18,6 +18,8 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
 import Item from './components/Item.jsx'
 import Cart from "./components/Cart.jsx"
+import Payment from "./components/Payment.jsx"
+import Transaction1 from "./components/Transaction1.jsx"
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart/>,
+  },
+  {
+    path: "/payment",
+    element: <Payment/>,
+  },
+  {
+    path: "/transaction1",
+    element: <Transaction1/>,
   },
 ]);
 

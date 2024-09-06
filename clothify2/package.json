@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.6.0",
+    "@stripe/react-stripe-js": "^2.8.0",
+    "@stripe/stripe-js": "^4.4.0",
     "appwrite": "^14.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

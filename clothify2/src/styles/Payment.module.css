@@ -1,0 +1,76 @@
+/* Payment.module.css */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  section img {
+    max-width: 150px;
+    border-radius: 8px;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  
+  .description h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .description h5 {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  section form {
+    margin-top: 20px;
+  }
+  
+  section button {
+    background-color: #6772e5;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  section button:hover {
+    background-color: #5469d4;
+  }
+  
+  section button:focus {
+    outline: none;
+  }
+  
+  section p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
