@@ -46,6 +46,8 @@ const Home = () => {
     fila: false,
   });
 
+  const [priceRange, setPriceRange] = useState([0, 1000]);
+
   const [trueSelectedBrands, setTrueSelectedBrands] = useState([]);
 
   useEffect(() => {
@@ -102,38 +104,8 @@ const Home = () => {
         {
           trueSelectedBrands.length === 0 ?
           ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).map((idea) => (
-            <div 
-              key={idea.$id}
-              className={styles.box}
-              onClick={() => {
-                localStorage.setItem("current_item", JSON.stringify(idea));
-                navigate('/item');
-              }}
-            >
-              <div style={{display: 'flex', flexDirection: "row"}}>
-                <div className={styles.sale} style={{visibility: idea.sale[0] != "0" ? "visible" : "hidden"}}>
-                  <p>
-                    {idea.sale}
-                  </p>
-                </div>
-                <div className={styles.sale} style={{marginLeft: grid ? "33%" : "65%", backgroundColor: "transparent", display: 'flex', flexDirection: "row", marginTop: "-1vh"}}>
-                <p>
-                  {idea.price}
-                </p>
-                
-                {
-                idea.sale[0] != "0" && <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
-                    &nbsp;${(parseFloat(idea.price.replace('$', ''))/(1-parseFloat(idea.sale.replace('%', ''))/100))}
-                  </p>
-                }
-                </div>
-              </div>
-              <img src={idea.image_url}/>
-              <h1 className={styles.overflow_dots}>{idea.title}</h1>
-            </div>
-          ))
-          :
-          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
+            <>{
+              parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) >= priceRange[0] && parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) <= priceRange[1] &&
             <div 
               key={idea.$id}
               className={styles.box}
@@ -161,6 +133,40 @@ const Home = () => {
               <img src={idea.image_url}/>
               <h1 className={styles.overflow_dots}>{idea.title}</h1>
             </div>
+            }</>
+          ))
+          :
+          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
+            <>{
+              parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) >= priceRange[0] && parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) <= priceRange[1] &&
+            <div 
+              key={idea.$id}
+              className={styles.box}
+              onClick={() => {
+                localStorage.setItem("current_item", JSON.stringify(idea));
+                navigate('/item');
+              }}
+            >
+              <div style={{display: 'flex', flexDirection: "row"}}>
+                <div className={styles.sale} style={{visibility: idea.sale[0] != "0" ? "visible" : "hidden"}}>
+                  <p>
+                    {idea.sale}
+                  </p>
+                </div>
+                <div className={styles.sale} style={{marginLeft: grid ? "33%" : "65%", backgroundColor: "transparent", display: 'flex', flexDirection: "row", marginTop: "-1vh"}}>
+                <p>
+                  {idea.price}
+                </p>
+                {idea.sale[0] != "0" && <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
+                    ${(parseFloat(idea.price.replace('$', ''))/(1-parseFloat(idea.sale.replace('%', ''))/100))}
+                  </p>
+                }
+                </div>
+              </div>
+              <img src={idea.image_url}/>
+              <h1 className={styles.overflow_dots}>{idea.title}</h1>
+            </div>
+            }</>
           ))
         }
         </div>
@@ -184,7 +190,10 @@ const Home = () => {
                 <h1>
                   Filter Items
                 </h1>
-                  <PriceSlider/>
+                  <PriceSlider
+                    priceRange={priceRange}
+                    setPriceRange={setPriceRange}
+                  />
                   <Brands 
                     selectedBrands={selectedBrands}
                     setSelectedBrands={setSelectedBrands}

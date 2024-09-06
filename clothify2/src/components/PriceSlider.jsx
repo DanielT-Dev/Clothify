@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import '../styles/PriceSlider.css'; // Import the CSS file for styling
 
 
-function PriceSlider() {
-  const [priceRange, setPriceRange] = useState([50, 150]);
+function PriceSlider({priceRange, setPriceRange}) {
 
   const handleMinSliderChange = (event) => {
     const newMinValue = Number(event.target.value);

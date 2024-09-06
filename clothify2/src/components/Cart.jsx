@@ -154,6 +154,9 @@ const Cart = () => {
                 ))
             }
         </div>
+        <button className={styles.continue}>
+            Confirm Items & Continue to Payment
+        </button>
         {   showNotification && (
             <Notification 
               message="Item removed from shopping list." 
