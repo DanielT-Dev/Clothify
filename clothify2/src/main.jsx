@@ -21,6 +21,10 @@ import Cart from "./components/Cart.jsx"
 import Payment from "./components/Payment.jsx"
 import Transaction1 from "./components/Transaction1.jsx"
 
+import ProtectedRoute from './components/ProtectedRoute';
+
+
+
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -44,29 +48,43 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: 
-    <IdeasProvider>
+    <ProtectedRoute>
       <Home/>
-    </IdeasProvider>,
+    </ProtectedRoute>,
   },
   {
     path: "/settings",
-    element: <Settings/>,
+    element: 
+    <ProtectedRoute>
+      <Settings/>
+    </ProtectedRoute>,
   },
   {
     path: "/item",
-    element: <Item/>,
+    element: 
+    <ProtectedRoute>
+      <Item/>
+    </ProtectedRoute>,
   },
   {
     path: "/cart",
-    element: <Cart/>,
+    element: 
+    <ProtectedRoute>
+      <Cart/>
+    </ProtectedRoute>,
   },
   {
     path: "/payment",
-    element: <Payment/>,
+    element: 
+    <ProtectedRoute>
+      <Payment/>
+    </ProtectedRoute>,
   },
   {
     path: "/transaction1",
-    element: <Transaction1/>,
+    element: <ProtectedRoute>
+      <Transaction1/>
+    </ProtectedRoute>,
   },
 ]);
 
