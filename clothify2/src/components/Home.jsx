@@ -103,7 +103,7 @@ const Home = () => {
         <div className={`${grid ? styles.grid_container : ''}`}>
         {
           trueSelectedBrands.length === 0 ?
-          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).map((idea) => (
+          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLowerCase())).map((idea) => (
             <>{
               parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) >= priceRange[0] && parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) <= priceRange[1] &&
             <div 
@@ -136,7 +136,7 @@ const Home = () => {
             }</>
           ))
           :
-          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLocaleLowerCase())).filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
+          ideas.current.filter((idea) => searchFilter == "" || idea.title.toLowerCase().includes(searchFilter.toLowerCase())).filter((idea) => trueSelectedBrands.map(([key, value]) => key.toLowerCase()).includes(idea.brand.toLowerCase())).map((idea) => (
             <>{
               parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) >= priceRange[0] && parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) <= priceRange[1] &&
             <div 
