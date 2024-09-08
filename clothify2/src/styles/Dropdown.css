@@ -1,0 +1,25 @@
+.dropdown-container {
+    width: 200px;
+    margin: 20px;
+  }
+  
+  #brand-dropdown {
+    width: 72vw;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  option {
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  

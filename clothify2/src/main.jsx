@@ -22,6 +22,7 @@ import Payment from "./components/Payment.jsx"
 import Transaction1 from "./components/Transaction1.jsx"
 
 import ProtectedRoute from './components/ProtectedRoute';
+import NewItem from './components/NewItem.jsx'
 
 
 
@@ -84,6 +85,12 @@ const router = createBrowserRouter([
     path: "/transaction1",
     element: <ProtectedRoute>
       <Transaction1/>
+    </ProtectedRoute>,
+  },
+  {
+    path: "/new_item",
+    element: <ProtectedRoute>
+      <NewItem/>
     </ProtectedRoute>,
   },
 ]);
