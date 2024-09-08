@@ -38,10 +38,51 @@
 } 
 @media screen and (min-width: 600px) 
 {
-    
+    .image 
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 55vw;
+        height: 100vh;
+    }
+    .logo 
+    {
+        position: absolute;
+        right: 11vw;
+        top: 10vh;
+    }
+    .slogan 
+    {
+        position: absolute;
+        right: 0;
+        width: 45vw;
+        text-align: center;
+        top: 33vh;
+    }
+    .button 
+    {
+        position: absolute;
+        right: 17vw;
+        text-align: center;
+        top: 53vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        border: none;
+        border-radius: 10px;
+        font-size: 3vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
 }
 body 
 {
     margin: 0px;
     font-family: "Gothic A1", sans-serif
+}
+button:hover 
+{
+    cursor: pointer;
 }
