@@ -63,5 +63,64 @@
 }
 @media screen and (min-width: 600px) 
 {
-    
+    .body 
+    {
+        position: absolute;
+        left: 7.5vw;
+        top: 5vh;
+        width: 85vw;
+        height: 8vh;
+        background-color: #FFE6BC;
+        border-radius: 10px;
+    }
+    .logo 
+    {
+        position: absolute;
+        left: 1vw;
+        top: 1vh;
+        width: 7vw;
+    }
+    .icon 
+    {
+        margin-right: 1vw;
+        margin-top: 1.75vh;
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+    .user_circle 
+    {
+        margin-right: 1vw;
+        margin-top: 1vh;
+        width: 6vh;
+        height: 6vh;
+        background-color: #E4CDA7;
+        border-radius: 50%;
+    }
+    .search input 
+    {
+        background-color: #FFE6BC;
+        margin-left: 3%;
+        margin-top: 1vh;
+        width: 75%;
+        height: 5vh;
+        border: none;
+        border-radius: 15px;
+        font-size: 2vh;
+        padding-left: 10px;
+    }
+    .search button 
+    {
+        margin-left: 2vw;
+        margin-top: 1vh;
+        width: 5vw;
+        height: 6vh;
+        background-color: #1FAB89;
+        border: none;
+        border-radius: 10px;
+    }
+    .search button .icon 
+    {
+        margin-right: 0;
+        margin-top: 0.3vh;
+    }
 }

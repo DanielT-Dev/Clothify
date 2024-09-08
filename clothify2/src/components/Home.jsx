@@ -100,6 +100,7 @@ const Home = () => {
           </button>
         </div>
         
+        <div className={`${window.innerWidth >= 600 ? styles.flex_container : ''}`}>
         <div className={`${grid ? styles.grid_container : ''}`}>
         {
           trueSelectedBrands.length === 0 ?
@@ -108,13 +109,13 @@ const Home = () => {
               parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) >= priceRange[0] && parseFloat(idea.price.replace(/[^0-9.-]+/g, '')) <= priceRange[1] &&
             <div 
               key={idea.$id}
-              className={styles.box}
+              className={`${styles.box} ${window.innerWidth >= 600 && idea.sale[0] != "0" ? styles.special_box : ''}`}
               onClick={() => {
                 localStorage.setItem("current_item", JSON.stringify(idea));
                 navigate('/item');
               }}
             >
-              <div style={{display: 'flex', flexDirection: "row"}}>
+              <div style={{display: 'flex', flexDirection: "row"}} className={styles.info}>
                 <div className={styles.sale} style={{visibility: idea.sale[0] != "0" ? "visible" : "hidden"}}>
                   <p>
                     {idea.sale}
@@ -124,9 +125,10 @@ const Home = () => {
                 <p>
                   {idea.price}
                 </p>
-                {idea.sale[0] != "0" && <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
+                {idea.sale[0] != "0" ? <p style={{textDecoration: 'line-through', textDecorationStyle: "double", marginLeft: "2vw"}}>
                     ${(parseFloat(idea.price.replace('$', ''))/(1-parseFloat(idea.sale.replace('%', ''))/100))}
                   </p>
+                  : <p></p>
                 }
                 </div>
               </div>
@@ -170,12 +172,13 @@ const Home = () => {
           ))
         }
         </div>
+        </div>
         <Modal
                 isOpen={showFilterModal}
                 onRequestClose={() => setShowFilterModal(false)}
                 style={{
                     content: {
-                        width: '70vw',
+                        width: '33vw',
                         height: "73vh",
                         margin: 'auto',
                         textAlign: 'center',

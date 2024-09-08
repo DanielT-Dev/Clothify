@@ -64,8 +64,8 @@ const Header = ({setSearchFilter}) => {
                 onRequestClose={() => setShowSearchModal(false)}
                 style={{
                     content: {
-                        width: '70vw',
-                        height: "18vh",
+                        width: window.innerWidth >= 600 ? "35vw" : '70vw',
+                        height: window.innerWidth >= 600 ? "15vh" : '18vh',
                         margin: 'auto',
                         textAlign: 'center',
                         borderRadius: '10px',

@@ -114,5 +114,139 @@
 }
 @media screen and (min-width: 600px) 
 {
-    
+    .body
+    {
+        margin-top: 16vh;
+        min-height: 100vh;
+        margin-left: 7.5vw;
+    }
+    .filter  
+    {
+        margin-right: 2vw;
+        font-size: 2.5vh;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        background-color: #F5F5F5;
+        border: none;
+        border-radius: 10px;
+    }
+    .filter img 
+    {
+        margin-top: 2vh;
+        margin-right: 0.3vw;
+        width: 2vw;
+    }
+    .filter_modal h1
+    {
+        font-size: 3vh;
+    }
+    .filter_modal button 
+    {
+        margin-top: 3vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        width: 85%;
+        height: 7vh;
+        border: none;
+        border-radius: 10px;
+        font-size: 3.2vh;
+    }
+    .flex_container 
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .flex_container .box 
+    {
+        position: relative;
+    }
+    .box
+    {
+        display: inline-block;
+        background-color: #F5F5F5;
+        width: 10vw;
+        height: 10vw;
+        margin-right: 2vw;
+        margin-top: 3vh;
+        border-radius: 15px;
+        padding: 2vw;
+    }
+    .grid_container 
+    {
+        margin-left: 5vw;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .grid_container .box 
+    {
+        width: 37vw !important;
+        height: 25vh !important;
+        margin-left: 0vw;
+        margin-right: 3vw !important;
+    }
+    .grid_container .box img 
+    {
+        margin-left: 5% !important;
+        width: 90% !important;
+        height: 15vh !important;
+    }
+    .grid_container .box h1 
+    {
+        font-size: 1.75vh !important;
+        text-align: center !important;
+        display: -webkit-box;            /* Enables the webkit-based flexible box layout */
+    }
+    .overflow_dots {
+        display: -webkit-box;              /* Enables the webkit-based flexible box layout */
+        line-clamp: 2; 
+        -webkit-line-clamp: 2;             /* Limits the text to 2 lines */
+        -webkit-box-orient: vertical;      /* Specifies the box orientation as vertical */
+        overflow: hidden;                  /* Ensures content is hidden if it overflows */
+        position: relative;                /* Sets up a context for the pseudo-element */
+        line-height: 1.5em;                /* Adjust this based on your font size and desired line height */
+        max-height: 3em;                   /* Adjust height for two lines based on line height */
+      }
+    .box h1 
+    {
+        font-size: 1.5vh;
+        text-align: center;
+    }
+    .box img 
+    {
+        margin-left: 5%;
+        width: 80%;
+        height: 8vw;
+    }
+    .box .sale 
+    {
+        position: relative;
+        left: -1.7vw;
+        background-color: #E4CDA7;
+        width: 3vw;
+        height: 2vw;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 2vh;
+        font-weight: 600;
+    }
+    .box .sale p 
+    {
+        position: relative;
+        top: 0.3vh;
+    }
+    .info 
+    {
+        margin-top: -3vh;
+    }
+    .special_box 
+    {
+        position: relative;
+        top: 2.3vh;
+    }
 }
