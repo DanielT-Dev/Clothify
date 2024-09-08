@@ -110,9 +110,12 @@ const Item = () => {
                     <p>
                         {item.price}
                     </p>
-                    <p style={{marginLeft: "3vw", textDecoration: "line-through", textDecorationStyle: "double"}}>
-                        ${(parseFloat(item.price.replace('$', ''))/(1-parseFloat(item.sale.replace('%', ''))/100))}
-                    </p>
+                    {
+                        item.sale[0] != "0" &&
+                        <p style={{marginLeft: "3vw", textDecoration: "line-through", textDecorationStyle: "double"}}>
+                            ${(parseFloat(item.price.replace('$', ''))/(1-parseFloat(item.sale.replace('%', ''))/100))}
+                        </p>
+                    }
                 </div>
                  
             </h1>
