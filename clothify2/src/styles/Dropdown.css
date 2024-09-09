@@ -1,10 +1,11 @@
 .dropdown-container {
-    width: 200px;
+    width: 94%;
     margin: 20px;
   }
   
   #brand-dropdown {
-    width: 72vw;
+    margin-left: 25%;
+    width: 50%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;

@@ -21,5 +21,28 @@
 }
 @media screen and (min-width: 600px) 
 {
-    
+    .body
+    {
+        margin-left: 7.5vw;
+        margin-top: 16vh;
+    }
+    .box
+    {
+        display: inline-block;
+        background-color: #F5F5F5;
+        width: 20vw;
+        margin-right: 2vw;
+        margin-top: 3vh;
+        border-radius: 15px;
+        padding: 1vw;
+    }
+    .box h1 
+    {
+        font-size: 3vh;
+        text-align: center;
+    }
+    .box button 
+    {
+        padding: 0.75vw !important;
+    }
 }
