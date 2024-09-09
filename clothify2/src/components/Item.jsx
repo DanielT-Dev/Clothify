@@ -106,7 +106,7 @@ const Item = () => {
                     item.sale[0] != "0" &&
                     <span>{item.sale} SALE</span>
                 }
-                <div style={{display: "flex", flexDirection: "row", marginLeft: "28vw", width: "33vw", alignItems: "center", justifyContent: "center"}}>
+                <div style={{display: "flex", flexDirection: "row", marginLeft: "28vw", width: "33vw", alignItems: window.innerWidth >= 600 ? "left" : "center", justifyContent: window.innerWidth >= 600 ? "left" : "center"}}>
                     <p>
                         {item.price}
                     </p>

@@ -250,3 +250,7 @@
         top: 2.3vh;
     }
 }
+.box 
+{
+    cursor: pointer;
+}

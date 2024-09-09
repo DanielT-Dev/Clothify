@@ -178,7 +178,7 @@ const Home = () => {
                 onRequestClose={() => setShowFilterModal(false)}
                 style={{
                     content: {
-                        width: '33vw',
+                        width: window.innerWidth >= 600 ? '33vw' : "70vw",
                         height: "73vh",
                         margin: 'auto',
                         textAlign: 'center',

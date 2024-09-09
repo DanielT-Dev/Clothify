@@ -6,18 +6,15 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: -2%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Set a max-width for better control on larger screens */
 }
-
+  
 .input-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 15px;
-  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
 }
 
 label {
@@ -41,7 +38,6 @@ label {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .slider {
@@ -84,42 +80,4 @@ label {
 
 .price-range-display span {
   color: #C3B091;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  .price-range-container {
-    width: 95%;
-    padding: 3vh;
-  }
-
-  .input-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .price-input {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
-  }
-
-  .slider {
-    width: 100%; /* Full width on smaller screens */
-    margin-top: 10px;
-  }
-
-  .slider-container {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .price-range-container {
-    padding: 4vh;
-  }
-
-  .price-range-display {
-    font-size: 14px;
-  }
 }
