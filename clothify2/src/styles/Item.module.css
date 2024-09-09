@@ -80,6 +80,59 @@
         height: 3vh;
         font-size: 2.5vh;
     }
+    .box h1 
+    {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 3vh;
+        padding-bottom: 0vh;
+    }
+    .review 
+    {
+        width: 85%;
+        margin-left: 7.5%;
+        border-top: 2px solid rgb(220, 220, 220);
+    }
+    .review h1 
+    {
+        margin-top: -1vh;
+        font-size: 2.2vh;
+        text-align: left;
+    }
+    .review p 
+    {
+        text-align: justify;
+    }
+    .review_user 
+    {
+        margin-top: 1.5vh;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        background-color: #E4CDA7;
+    }
+    .user 
+    {
+        margin-left: 2vw;
+        font-size: 2.2vh;
+    }
+    .rating 
+    {
+        margin-left: 2vw;
+        margin-top: -2vh;
+        font-size: 2.2vh;
+    }
+    .add_review 
+    {
+        position: relative;
+        left: 7.5%;
+        width: 70% !important;
+        height: 5vh;
+        background-color: #1FAB89 !important;
+        color: #9DF3C4;
+        margin-bottom: 2vh;
+    }
 }
 @media screen and (min-width: 600px) 
 {

@@ -9,6 +9,11 @@ import { getDocumentByField, updateDocument } from '../lib/appwrite';
 import { useUser } from '@clerk/clerk-react';
 import Notification from './Notification';
 
+import Modal from 'react-modal';
+import AddReviewModal from './AddReviewModal';
+
+Modal.setAppElement('#root');
+
 const Item = () => {
     const item = JSON.parse(localStorage.getItem("current_item"));
 
@@ -28,6 +33,8 @@ const Item = () => {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+
+    const [showReviewModal, setShowReviewModal] = useState(false);
 
     useEffect(() => {
         const handleGetDocument = async () => {
@@ -79,6 +86,18 @@ const Item = () => {
     const clothingSizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
     const [showSizes, setShowSizes] = useState(false);
+
+    const closeModal = () => {
+        setShowReviewModal(false);
+      };
+    
+      // Function to handle form submission
+      const handleReviewSubmit = (reviewData) => {
+        // Process the review data (e.g., send to a server or update state)
+        console.log('Review submitted:', reviewData);
+        // Close the modal after submission
+        closeModal();
+      };
 
     if (!user || loading) {
         return <div>Loading...</div>;
@@ -162,8 +181,57 @@ const Item = () => {
                     }
                 </div>
             }
-            
+            <div className={styles.box}>
+                <h1>
+                    Reviews
+                </h1>
+                <button 
+                    className={styles.add_review} 
+                    onClick={() => setShowReviewModal(true)}
+                >
+                    Add Review
+                </button>
+                <div className={styles.review}>
+                    <div style={{display: "flex" ,flexDirection: "row"}}>
+                        <div className={styles.review_user} style={{textAlign: "center", fontSize: "4vh", fontWeight:"600", alignItems: "center", justifyContent: "center", display: "flex"}}>
+                            A
+                        </div>
+                        <div style={{display: "flex" ,flexDirection: "column"}}>
+                            <p className={styles.user}>
+                                Alex Popescu
+                            </p>
+                            <div className={styles.rating}>
+                                Rating: ★★★★☆ (4/5)
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <p>
+                        9 September 2024
+                    </p>
+
+                    <h1>
+                    Great Quality, But Runs Slightly Small
+                    </h1>
+                    <p>
+                    I bought this t-shirt a week ago and I absolutely love the fabric. It's soft, breathable, and holds up well after washing. The black color hasn’t faded at all, which is a huge plus for me.
+
+                    However, the fit is a little tighter than I expected, especially around the shoulders. I usually wear a Medium, but I think I’ll go for a Large next time for a more relaxed fit.
+
+                    Overall, it's a great wardrobe staple, just consider sizing up if you prefer a looser fit.
+                    </p>
+                    <br/>
+                </div>
+            </div>
+            <br/>
         </div>
+        
+        <AddReviewModal
+            isOpen={showReviewModal}
+            onClose={closeModal} 
+            onSubmit={handleReviewSubmit}
+        />
         {   showNotification && (
             <Notification 
               message="Item added to shopping list." 
