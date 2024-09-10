@@ -17,7 +17,7 @@ const SignOut = () => {
   };
 
   return (
-    <button style={{backgroundColor: "#E97777", color: "#FF9F9F", border: "none", padding: '3vw', fontWeight: "600", fontSize: "3vh", borderRadius: "10px"}} onClick={handleLogout}>Sign-Out</button>
+    <button style={{backgroundColor: "#E97777", color: "#FF9F9F", border: "none", padding: '3vw', fontSize: "3vh", borderRadius: "10px"}} onClick={handleLogout}>Sign-Out</button>
   );
 };
 

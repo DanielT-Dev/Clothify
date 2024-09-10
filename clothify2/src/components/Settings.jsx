@@ -25,20 +25,25 @@ const Settings = () => {
       <Header />
       <div className={styles.body}>
         <div className={styles.box}>
-          <h1>Authentication Settings</h1>
+          <div style={{display: 'flex', flexDirection: "row"}}>
+            <img src="/auth1.png"/>
+            <h1>Authentication Settings</h1>
+          </div>
           <SignOut />
         </div>
 
         {isAdmin && (
           <div className={styles.box}>
-            <h1>Administrator Interface</h1>
+            <div style={{display: 'flex', flexDirection: "row"}}>
+              <img src="/admin1.png"/>
+              <h1>Administrator Interface</h1>
+            </div>
             <button
               style={{
                 backgroundColor: "#1FAB89",
                 color: "#9DF3C4",
                 border: "none",
                 padding: '3vw',
-                fontWeight: "600",
                 fontSize: "3vh",
                 borderRadius: "10px"
               }}
@@ -48,6 +53,37 @@ const Settings = () => {
             </button>
           </div>
         )}
+
+          <div className={styles.box}>
+            <div style={{display: 'flex', flexDirection: "row"}}>
+              <img src="/bell1.png"/>
+              <h1>News & Notfications</h1>
+            </div>
+            <button onClick={() => navigate('/newsletter')}>
+              Newsletter
+            </button>
+          </div>
+
+          <div className={styles.box}>
+            <div style={{display: 'flex', flexDirection: "row"}}>
+              <img src="/note1.png"/>
+              <h1>Order History</h1>
+            </div>
+            <button>
+              View History
+            </button>
+          </div>
+
+          <div className={styles.box}>
+            <div style={{display: 'flex', flexDirection: "row"}}>
+              <img src="/map1.png"/>
+              <h1>Order Tracking</h1>
+            </div>
+            <button>
+              Live View
+            </button>
+          </div>
+          <br/>
       </div>
     </div>
   );

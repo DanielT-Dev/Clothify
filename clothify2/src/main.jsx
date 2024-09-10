@@ -22,10 +22,8 @@ import Payment from "./components/Payment.jsx"
 import Transaction1 from "./components/Transaction1.jsx"
 
 import ProtectedRoute from './components/ProtectedRoute';
-import NewItem from './components/NewItem.jsx'
-
-
-
+import NewItem from './components/NewItem.jsx';
+import Newsletter from "./components/Newsletter.jsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -91,6 +89,12 @@ const router = createBrowserRouter([
     path: "/new_item",
     element: <ProtectedRoute>
       <NewItem/>
+    </ProtectedRoute>,
+  },
+  {
+    path: "/newsletter",
+    element: <ProtectedRoute>
+      <Newsletter/>
     </ProtectedRoute>,
   },
 ]);

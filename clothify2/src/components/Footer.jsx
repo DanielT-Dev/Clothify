@@ -9,6 +9,9 @@ function Footer() {
         <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
         <span> | </span>
         <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <br/>
+        <br/>
+        <a href="/newsletter" target="_blank" rel="noopener noreferrer">Subscribe to Newsletter</a>
       </div>
     </footer>
   );

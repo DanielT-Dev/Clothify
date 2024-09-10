@@ -12,11 +12,29 @@
         margin-top: 3vh;
         border-radius: 15px;
         padding: 3vw;
+        padding-top: 2vh;
     }
     .box h1 
     {
-        font-size: 3vh;
+        margin-top: 1vh;
+        font-size: 2.5vh;
         text-align: center;
+        font-weight: 400;
+    }
+    .box img 
+    {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: 5vh;
+        height: 5vh;
+    }
+    .box button 
+    {
+        background-color: #E4CDA7;
+        border: none;
+        padding: 1.5vh;
+        border-radius: 10px;
+        font-size: 2.5vh;
     }
 }
 @media screen and (min-width: 600px) 
