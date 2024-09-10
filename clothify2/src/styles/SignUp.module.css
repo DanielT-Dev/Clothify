@@ -30,12 +30,11 @@
     {
         background-color: #FFE6BC;
         margin-left: 10%;
-        width: 80%;
+        width: 80% !important;
         height: 5vh;
-        border: none;
-        border-radius: 15px;
+        border: none !important;
         font-size: 2vh;
-        padding-left: 2vw;
+        padding-left: 2vw !important;
     }
     .box p 
     {
@@ -97,7 +96,6 @@
         width: 80%;
         height: 5vh;
         border: none;
-        border-radius: 15px;
         font-size: 2vh;
         padding-left: 10px;
     }

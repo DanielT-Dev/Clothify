@@ -4,7 +4,7 @@ import Header from "./Header"
 
 import styles from "../styles/Item.module.css";
 import { useNavigate } from 'react-router-dom';
-import { getDocumentByField, updateDocument } from '../lib/appwrite';
+import { getAllDocuments, getDocumentByField, updateDocument } from '../lib/appwrite';
 
 import { useUser } from '@clerk/clerk-react';
 import Notification from './Notification';
@@ -21,6 +21,7 @@ const Item = () => {
 
     const database_id = import.meta.env.VITE_APPWRITE_DATABASE_ID;
     const users_collection_id = import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID;
+    const reviews_collection_id = import.meta.env.VITE_APPWRITE_REVIEWS_COLLECTION_ID;
 
     const { user } = useUser();
 
@@ -30,6 +31,7 @@ const Item = () => {
 
     const [userDocument, setUserDocument] = useState();
     const [documentId, setDocumentId] = useState();
+    const [reviews, setReviews] = useState();
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -48,6 +50,11 @@ const Item = () => {
                     user.emailAddresses[0].emailAddress,
                 );
 
+                const reviews = await getAllDocuments(
+                    database_id,
+                    reviews_collection_id,
+                )
+
                 if (result) {
                     setUserDocument({
                         first_name: result.first_name,
@@ -56,6 +63,17 @@ const Item = () => {
                         cart: result.cart,
                     });
                     setDocumentId(result.$id);
+                    setReviews(reviews.map((r) => ({
+                        review_id: r.review_id,
+                        author_id: r.author_id,
+                        rating: r.rating,
+                        title: r.title,
+                        content: r.content,
+                        recommend: r.recommend,
+                        date: r.date,
+                        author_name: r.author_name,
+                        item_id: r.item_id,
+                    })));
                     setLoading(false);
                 } else {
                     setError('No document found with the specified field value.');
@@ -191,38 +209,38 @@ const Item = () => {
                 >
                     Add Review
                 </button>
-                <div className={styles.review}>
+                {
+                    reviews && reviews.filter((review) => review.item_id == JSON.parse(localStorage.getItem("current_item")).item_id).map((review) => {
+                        return (<div className={styles.review}>
                     <div style={{display: "flex" ,flexDirection: "row"}}>
                         <div className={styles.review_user} style={{textAlign: "center", fontSize: "4vh", fontWeight:"600", alignItems: "center", justifyContent: "center", display: "flex"}}>
-                            A
+                            {review.author_name[0]}
                         </div>
                         <div style={{display: "flex" ,flexDirection: "column"}}>
                             <p className={styles.user}>
-                                Alex Popescu
+                                {review.author_name}
                             </p>
                             <div className={styles.rating}>
-                                Rating: ★★★★☆ (4/5)
+                                Rating: { '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating) } ({review.rating}/5)
                             </div>
                         </div>
                         
                     </div>
                     
                     <p>
-                        9 September 2024
+                        {review.date}
                     </p>
 
                     <h1>
-                    Great Quality, But Runs Slightly Small
+                    {review.title}
                     </h1>
                     <p>
-                    I bought this t-shirt a week ago and I absolutely love the fabric. It's soft, breathable, and holds up well after washing. The black color hasn’t faded at all, which is a huge plus for me.
-
-                    However, the fit is a little tighter than I expected, especially around the shoulders. I usually wear a Medium, but I think I’ll go for a Large next time for a more relaxed fit.
-
-                    Overall, it's a great wardrobe staple, just consider sizing up if you prefer a looser fit.
+                    {review.content}
                     </p>
                     <br/>
-                </div>
+                </div>)
+                    })
+                }
             </div>
             <br/>
         </div>

@@ -36,10 +36,21 @@ export const updateDocument = async (databaseId, collectionId, documentId, updat
 
 export const createDocument = async (databaseId, collectionId, data) => {
     try {
-        const response = await databases.updateDocument(databaseId, collectionId, ID.unique(), data);
+        const response = await databases.createDocument(databaseId, collectionId, ID.unique(), data);
         return response;
     } catch (error) {
         console.error('Error creating document:', error);
         throw error; 
     }
 }
+
+export const getAllDocuments = async (databaseId, collectionId) => {
+    try {
+      const response = await databases.listDocuments(databaseId, collectionId);
+      return response.documents;
+    } catch (error) {
+      console.error('Error fetching documents:', error);
+      throw new Error('Error fetching documents: ' + error.message);
+    }
+  };
+  

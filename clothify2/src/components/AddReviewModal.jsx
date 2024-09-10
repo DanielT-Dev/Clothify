@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/AddReviewModal.module.css';
+import { createDocument, getDocumentByField } from '../lib/appwrite';
+import { Client, Databases } from 'appwrite';
+import { useUser } from '@clerk/clerk-react';
 
 const AddReviewModal = ({ isOpen, onClose, onSubmit }) => {
   const [rating, setRating] = useState(0);
@@ -7,15 +10,50 @@ const AddReviewModal = ({ isOpen, onClose, onSubmit }) => {
   const [review, setReview] = useState('');
   const [recommend, setRecommend] = useState(false);
 
-  const handleSubmit = (e) => {
+  const { user } = useUser();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+      const database_id = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+      const collection_id = import.meta.env.VITE_APPWRITE_REVIEWS_COLLECTION_ID;
+
+      const client = new Client();
+  client
+    .setEndpoint("https://cloud.appwrite.io/v1")
+    .setProject(import.meta.env.VITE_APPWRITE_PROJECT); // Replace with your project ID
+
+    const databases = new Databases(client);
+
+    const listResponse = await databases.listDocuments(
+      database_id,
+      collection_id,
+    );
+
+    // Step 2: Generate new ID as total documents + 1
+    const newId = listResponse.total + 1;
+
+    const userDocument = await getDocumentByField(
+                          database_id,
+                          import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID, 
+                          "email",
+                          user.emailAddresses[0].emailAddress
+                        );
+
     const newReview = {
+      review_id: JSON.stringify(newId),
+      author_id: userDocument.user_id,
       rating,
       title,
-      review,
+      content: review,
       recommend,
       date: new Date().toLocaleDateString(),
+      author_name: userDocument.first_name + " " + userDocument.last_name,
+      item_id: JSON.parse(localStorage.getItem("current_item")).item_id,
     };
+
+    await createDocument(database_id, collection_id, newReview);
+
     onSubmit(newReview);  // Send the new review data to the parent component or server
     onClose();  // Close the modal after submission
   };
