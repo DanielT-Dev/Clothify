@@ -39,14 +39,6 @@ const Settings = () => {
               <h1>Administrator Interface</h1>
             </div>
             <button
-              style={{
-                backgroundColor: "#1FAB89",
-                color: "#9DF3C4",
-                border: "none",
-                padding: '3vw',
-                fontSize: "3vh",
-                borderRadius: "10px"
-              }}
               onClick={() => navigate('/new_item')}
             >
               Add a new item

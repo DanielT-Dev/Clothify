@@ -14,7 +14,9 @@
     .box
     {
         display: inline-block;
-        background-color: #F5F5F5;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         width: 81vw;
         margin-right: 2vw;
         margin-top: 0vh;
@@ -156,7 +158,9 @@
     .box
     {
         display: inline-block;
-        background-color: #F5F5F5;
+        background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         width: 33vw;
         margin-left: 25.5vw;
         margin-right: 2vw;

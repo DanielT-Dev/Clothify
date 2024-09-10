@@ -1,5 +1,6 @@
 import React from 'react';
 import { useClerk } from '@clerk/clerk-react';
+import styles from "../styles/Settings.module.css";
 
 const SignOut = () => {
   const { signOut } = useClerk();
@@ -17,7 +18,7 @@ const SignOut = () => {
   };
 
   return (
-    <button style={{backgroundColor: "#E97777", color: "#FF9F9F", border: "none", padding: '3vw', fontSize: "3vh", borderRadius: "10px"}} onClick={handleLogout}>Sign-Out</button>
+    <button className={styles.adminButton} onClick={handleLogout}>Sign-Out</button>
   );
 };
 

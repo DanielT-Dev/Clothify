@@ -143,7 +143,7 @@ const Item = () => {
                     item.sale[0] != "0" &&
                     <span>{item.sale} SALE</span>
                 }
-                <div style={{display: "flex", flexDirection: "row", marginLeft: "28vw", width: "33vw", alignItems: window.innerWidth >= 600 ? "left" : "center", justifyContent: window.innerWidth >= 600 ? "left" : "center"}}>
+                <div style={{marginBottom: "0", display: "flex", flexDirection: "row", marginLeft: "28vw", width: "33vw", alignItems: window.innerWidth >= 600 ? "left" : "center", justifyContent: window.innerWidth >= 600 ? "left" : "center"}}>
                     <p>
                         {item.price}
                     </p>
@@ -174,9 +174,9 @@ const Item = () => {
                         style={{scale: "0.7"}}
                     />
                 }
-                <p>
+                <h2>
                     Choose Size
-                </p>
+                </h2>
             </button>
             {
                 showSizes &&
@@ -227,7 +227,7 @@ const Item = () => {
                         
                     </div>
                     
-                    <p>
+                    <p style={{marginBottom: "0"}}>
                         {review.date}
                     </p>
 
