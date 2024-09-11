@@ -183,6 +183,7 @@ const Home = () => {
                         margin: 'auto',
                         textAlign: 'center',
                         borderRadius: '10px',
+                        background: "#f7f7f7",
                     },
                     overlay: {
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',

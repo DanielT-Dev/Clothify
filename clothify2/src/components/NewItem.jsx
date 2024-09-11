@@ -88,9 +88,9 @@ const NewItem = () => {
         <h1>Add a new item to Clothify</h1>
         <form onSubmit={handleSubmit} className={styles.box}>
           <p>Title</p>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
           <p>Image URL</p>
-          <input type="text" value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
+          <input type="text" value={imageURL} onChange={(e) => setImageURL(e.target.value)} required/>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <p>
@@ -100,7 +100,7 @@ const NewItem = () => {
                   Must contain currency symbol (ex: $123)
                 </span>
               </p>
-              <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} className={styles.numericInput} />
+              <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} className={styles.numericInput} required/>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <p>
@@ -110,7 +110,7 @@ const NewItem = () => {
                   Must contain percentage symbol (ex: 50%)
                 </span>
               </p>
-              <input type="text" value={sale} onChange={(e) => setSale(e.target.value)} className={styles.numericInput} />
+              <input type="text" value={sale} onChange={(e) => setSale(e.target.value)} className={styles.numericInput} required/>
             </div>
           </div>
           <p>
@@ -134,6 +134,7 @@ const NewItem = () => {
                 type="checkbox"
                 checked={isCloth}
                 onChange={handleToggle}
+                required
               />
               <span className={styles.slider}></span>
             </label>

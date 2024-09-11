@@ -11,7 +11,7 @@ function Footer() {
         <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <br/>
         <br/>
-        <a href="/newsletter" target="_blank" rel="noopener noreferrer">Subscribe to Newsletter</a>
+        <a href="/newsletter" rel="noopener noreferrer">Subscribe to Newsletter</a>
       </div>
     </footer>
   );

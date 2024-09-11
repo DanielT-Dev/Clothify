@@ -35,6 +35,7 @@
         width: 80%;
         height: 5vh;
         border: none !important;
+        border-radius: 0px !important;
         font-size: 2vh;
         padding-left: 2vw;
     }
@@ -98,7 +99,8 @@
         margin-left: 10%;
         width: 80%;
         height: 5vh;
-        border: none;
+        border: none !important;
+        border-radius: 0px !important;
         font-size: 2vh;
         padding-left: 10px;
     }
@@ -123,8 +125,23 @@
         margin-bottom: 2vh;
     }
 }
+.body p span:hover 
+{
+    cursor: pointer;
+}
 body 
 {
     margin: 0px;
     font-family: "Gothic A1", sans-serif
+}
+.box input[type="text"]
+{
+    padding: 0 !important;
+    padding-left: 2% !important;
+}
+.box input[type="password"]
+{
+    padding: 0 !important;
+    padding-left: 2% !important;
+    width: 88% !important;
 }

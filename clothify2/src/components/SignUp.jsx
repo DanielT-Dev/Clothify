@@ -113,6 +113,7 @@ const SignUp = () => {
                             type="text"
                             value={first_name}
                             onChange={(e) => setFirstName(e.target.value)}
+                            style={{fontSize: "2vh", width: "80%"}}
                             required
                         />
                     </div>
@@ -124,6 +125,7 @@ const SignUp = () => {
                             type="text"
                             value={last_name}
                             onChange={(e) => setLastName(e.target.value)}
+                            style={{fontSize: "2vh", width: "80%"}}
                             required
                         />
                     </div>
@@ -172,7 +174,7 @@ const SignUp = () => {
                 </div>
                 <p>
                     Already have an account?
-                    <span style={{color: "#C3B091"}} onClick={() => navigate("/sign-in")}>Sign-In</span> instead
+                    <span style={{color: "#C3B091"}} onClick={() => navigate("/sign-in")}> <br/>Sign-In</span> instead
                 </p>
                 <button 
                     className={styles.button}
@@ -240,6 +242,7 @@ const SignUp = () => {
                 <VerificationBad/>
             </Modal>
         </div>
+        <br/>
     </div>
   )
 }

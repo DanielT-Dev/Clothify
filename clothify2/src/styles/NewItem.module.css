@@ -36,9 +36,9 @@
         border: 1px solid #ccc;
         margin-left: 7.5%;
         margin-top: -2vh;
-        width: 80%;
-        height: 5vh;
-        border-radius: 15px;
+        width: 85%;
+        height: 4vh;
+        border-radius: 0px;
         font-size: 2vh;
         padding-left: 2vw;
     }
@@ -105,9 +105,11 @@
       }
       
       .numericInput {
-        width: 100px;
+        width: 30% !important;
+        height: 6vh !important;
+        margin-left: 35% !important;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 15px !important;
         border: 1px solid #ccc;
         font-size: 16px;
         text-align: center;
