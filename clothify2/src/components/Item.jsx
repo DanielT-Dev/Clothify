@@ -214,7 +214,9 @@ const Item = () => {
                         return (<div className={styles.review}>
                     <div style={{display: "flex" ,flexDirection: "row"}}>
                         <div className={styles.review_user} style={{textAlign: "center", fontSize: "4vh", fontWeight:"600", alignItems: "center", justifyContent: "center", display: "flex"}}>
-                            {review.author_name[0]}
+                            <span style={{marginTop: "0.5vh", background: "transparent"}}>
+                                {review.author_name[0]}
+                            </span>
                         </div>
                         <div style={{display: "flex" ,flexDirection: "column"}}>
                             <p className={styles.user}>

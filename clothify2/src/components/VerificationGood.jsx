@@ -7,8 +7,8 @@ const VerificationGood = () => {
             Your Account Has Been Verified
         </h1>
         <img src="/verificationgood1.png" style={{width: "100%"}}/>
-        <a style={{borderBottom: "3px solid #C3B091", paddingBottom: "5px", fontSize: "2vh", width: "100%", textAlign: "center"}}>
-            Continue to Sign-In page
+        <a href="/home" style={{borderBottom: "3px solid #C3B091", paddingBottom: "5px", fontSize: "2vh", width: "100%", textAlign: "center"}}>
+            Continue to Home
         </a>
     </div>
   )
