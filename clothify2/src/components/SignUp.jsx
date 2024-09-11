@@ -93,7 +93,7 @@ const SignUp = () => {
             last_name,
             email,
             cart: [],
-            user_id: newId,
+            user_id: JSON.stringify(newId),
           })
 
           console.log('Sign-up successful!');
