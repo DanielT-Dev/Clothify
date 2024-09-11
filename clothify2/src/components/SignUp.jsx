@@ -11,6 +11,7 @@ import VerificationBad from './VerificationBad'
 
 import {useNavigate} from "react-router-dom";
 
+import { Client, Databases } from 'appwrite';
 import {createDocument} from "../lib/appwrite";
 
 Modal.setAppElement('#root'); // Set the app element for accessibility (important for screen readers)
@@ -72,11 +73,27 @@ const SignUp = () => {
     
           // Redirect or handle successful sign-up (e.g., navigate to a dashboard)
 
+            const client = new Client();
+            client
+            .setEndpoint("https://cloud.appwrite.io/v1")
+            .setProject(import.meta.env.VITE_APPWRITE_PROJECT); // Replace with your project ID
+
+            const databases = new Databases(client);
+
+            const listResponse = await databases.listDocuments(
+                import.meta.env.VITE_APPWRITE_DATABASE_ID, // Your database ID
+                import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID, // Your collection ID
+              );
+              
+            const newId = listResponse.total + 1;
+
+
           await createDocument(database_id, users_collection_id, {
             first_name,
             last_name,
             email,
             cart: [],
+            user_id: newId,
           })
 
           console.log('Sign-up successful!');
