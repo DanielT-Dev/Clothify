@@ -1,0 +1,153 @@
+@media screen and (max-width: 600px) 
+{
+    .image 
+    {
+        width: 100vw;
+        height: 30vh;
+    }
+    .slogan 
+    {
+        position: absolute;
+        text-align: center;
+        top: 11vh;
+        width: 100vw;
+    }
+    .box 
+    {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: 10vw;
+        top: 33vh;
+        width: 80vw;
+        padding: 0.5vh;
+        border-radius: 15px;
+    }
+    .box h1 
+    {
+        text-align: center;
+    }
+    .box input 
+    {
+        background-color: #FFE6BC;
+        margin-left: 10%;
+        width: 75%;
+        height: 5vh;
+        border: none !important;
+        font-size: 2vh;
+        padding-left: 2vw !important;
+        border-radius: 0 !important;
+    }
+    .box p 
+    {
+        margin-left: 15%;
+        width: 70%;
+        text-align: center;
+        font-weight: 600;
+    }
+    .button 
+    {
+        position: releative;
+        margin-left: 5%;
+        width: 90%;
+        height: 6vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        border: none;
+        border-radius: 10px;
+        font-size: 3vh;
+        margin-bottom: 2vh;
+    }
+} 
+@media screen and (min-width: 600px) 
+{
+    .image 
+    {
+        position: absolute;
+        left: 33vw;
+        width: 33vw;
+        height: 30vh;
+        border-radius: 15px;
+    }
+    .slogan 
+    {
+        position: absolute;
+        left: 33vw;
+        top: 11vh;
+        width: 33vw;
+        text-align: center;
+    }
+    .box 
+    {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: 33vw;
+        top: 33vh;
+        width: 33vw;
+        padding: 0.5vh;
+        border-radius: 15px;
+    }
+    .box h1 
+    {
+        text-align: center;
+    }
+    .box input 
+    {
+        background-color: #FFE6BC;
+        margin-left: 10%;
+        width: 80%;
+        height: 5vh;
+        border: none !important;
+        border-radius: 0px !important;
+        font-size: 2vh;
+        padding-left: 10px;
+    }
+    .box p 
+    {
+        margin-left: 15%;
+        width: 70%;
+        text-align: center;
+        font-weight: 600;
+    }
+    .button 
+    {
+        position: releative;
+        margin-left: 5%;
+        width: 90%;
+        height: 6vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        border: none;
+        border-radius: 10px;
+        font-size: 3vh;
+        margin-bottom: 2vh;
+    }
+
+}
+.body 
+{
+    height: 103vh;
+}
+.body p span:hover 
+{
+    cursor: pointer;
+}
+body 
+{
+    margin: 0px;
+    font-family: "Gothic A1", sans-serif
+}
+.box input[type="text"]
+{
+    padding: 0 !important;
+    padding-left: 2% !important;
+}
+.box input[type="password"]
+{
+    padding: 0 !important;
+    padding-left: 2% !important;
+    width: 88% !important;
+}

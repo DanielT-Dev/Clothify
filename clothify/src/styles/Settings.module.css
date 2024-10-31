@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px) 
+{
+    .body
+    {
+        margin-top: 16vh;
+    }
+    .box
+    {
+        background-color: #F5F5F5;
+        width: 79vw;
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        border-radius: 15px;
+        padding: 3vw;
+    }
+    .box h1 
+    {
+        font-size: 3vh;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 600px) 
+{
+    
+}

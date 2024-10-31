@@ -1,0 +1,30 @@
+.thankYouContainer {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .thankYouContainer h1 {
+    color: #4caf50;
+  }
+  
+  .thankYouContainer p {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .backToShopLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .backToShopLink:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,186 @@
+@media screen and (max-width: 600px)
+{
+    .body 
+    {
+        margin-top: 17vh;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 85vw;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        height: 10.5vh;
+        border-radius: 10px;
+    }
+    .box 
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    .item_image
+    {
+        margin-left: 4vw;
+        margin-top: 0.75vh;
+        width: 7vh;
+        height: 7vh;
+        border-radius: 15px;
+        border: 8px solid #FFE6BC;
+    }
+    .box h1 
+    {
+        width: 35%;
+        height: 100%;
+        margin-left: 3vw;
+        margin-right: 2vw;
+        margin-top: 0vh;
+        font-size: 1.75vh;
+        
+        text-align: left;
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+    .box p 
+    {
+        font-weight: 600;
+    }
+    .box button 
+    {
+        position: absolute;
+        right: 10.5vw;
+        margin-top: 2.75vh;
+        background-color: #E97777;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        height: 5vh;
+        width: 5vh;
+    }
+    .box button img 
+    {
+        margin-top: 0.3vh;
+        width: 3.5vh;
+        height: 3.5vh;
+    }
+    .gird 
+    {
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+    .continue 
+    {
+        margin-left: 7.5vw;
+        margin-top: 5vh;
+        width: 85vw;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        font-size: 2.5vh;
+        border: none;
+        border-radius: 15px;
+    }
+}
+@media screen and (min-width: 600px)
+{
+    .body 
+    {
+        margin-top: 17vh;
+    }
+    .body img 
+    {
+        width: 3vw !important;
+        height: 3vw !important;
+        margin-right: 1vw !important;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 30vw;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        height: 10.5vh;
+        border-radius: 10px;
+    }
+    .box 
+    {
+        padding-top: 1vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .item_image
+    {
+        margin-left: 4vw;
+        margin-top: 0.75vh;
+        width: 7vh !important;
+        height: 7vh !important;
+        border-radius: 15px;
+        border: 8px solid #FFE6BC;
+        margin-right: 0vw !important;
+    }
+    .box h1 
+    {
+        width: 35%;
+        height: 100%;
+        margin-left: 3vw;
+        margin-right: 2vw;
+        margin-top: 0vh;
+        font-size: 1.75vh;
+        
+        text-align: left;
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+    .box p 
+    {
+        font-weight: 600;
+    }
+    .box button 
+    {
+        position: relative;
+        right: 1vw;
+        margin-top: 2.75vh;
+        background-color: #E97777;
+        border: none;
+        border-radius: 15px;
+        height: 5vh;
+        width: 5vh;
+    }
+    .box button img 
+    {
+        margin-top: 0.3vh;
+        width: 3.5vh !important;
+        height: 3.5vh !important;
+        margin-right: 0vw !important;
+    }
+    .gird 
+    {
+        display: flex;
+        justify-content: flex-start; /* Centers horizontally */
+        align-items: center; 
+    }
+    .continue 
+    {
+        margin-left: 7.5vw;
+        margin-top: 5vh;
+        width: 30vw;
+        padding-left: 3vh;
+        padding-right: 3vh;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        font-size: 2.5vh;
+        border: none;
+        border-radius: 15px;
+    }
+}

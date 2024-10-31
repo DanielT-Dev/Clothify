@@ -1,0 +1,252 @@
+@media screen and (max-width: 600px)
+{
+    .body
+    {
+        margin-top: 17vh;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 85vw;
+        border-radius: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .box img 
+    {
+        margin-left: 7.5%;
+        width: 85%;
+        height: 30vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .box .back 
+    {
+        position: absolute;
+        left: 2vw;
+        top: 15vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .box .cart 
+    {
+        position: absolute;
+        right: 10vw;
+        top: 45vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .body h1 
+    {
+        width: 90vw;
+        margin-left: 5vw;
+        font-size: 3vh;
+        text-align: center;
+    }
+    .body p 
+    {
+        margin-bottom: 0;
+    }
+    .body h2 
+    {
+        margin-left: 2vw;
+        margin-top: 3vh;
+    }
+    .body button img 
+    {
+        margin-left: 2vw;
+        margin-top: 1.5vh;
+        width: 6vh;
+    }
+    .body button
+    {
+        margin-left: 7.5vw;
+        width: 85vw;
+        font-size: 3vh;
+        border: none;
+        border-radius: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .body span 
+    {
+        background-color: #E4CDA7;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .body ul 
+    {
+        border-radius: 15px;
+        padding: 6vw;
+        margin-left: 7.5vw;
+        width: 73vw;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        list-style-type: none;
+    }
+    .body li 
+    {
+        padding-bottom: 0.3vh;
+        margin-bottom: 2vh;
+        border-bottom: 2px solid rgb(230, 230, 230);
+        height: 3vh;
+        font-size: 2.5vh;
+    }
+    .box h1 
+    {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 3vh;
+        padding-bottom: 0vh;
+    }
+    .review 
+    {
+        width: 85%;
+        margin-left: 7.5%;
+        border-top: 2px solid rgb(220, 220, 220);
+    }
+    .review h1 
+    {
+        margin-top: -1vh;
+        font-size: 2.2vh;
+        text-align: left;
+    }
+    .review p 
+    {
+        margin-bottom: 2.5vh;
+        text-align: justify;
+    }
+    .review_user 
+    {
+        margin-top: 1.5vh;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        background-color: #E4CDA7;
+    }
+    .user 
+    {
+        margin-left: 2vw;
+        font-size: 2.2vh;
+    }
+    .rating 
+    {
+        margin-left: 2vw;
+        margin-top: -2vh;
+        font-size: 2.2vh;
+    }
+    .add_review 
+    {
+        position: relative;
+        left: 7.5%;
+        width: 70% !important;
+        height: 5vh;
+        background-color: #1FAB89 !important;
+        color: #9DF3C4;
+        margin-bottom: 2vh;
+    }
+}
+@media screen and (min-width: 600px) 
+{
+    .body
+    {
+        margin-top: 17vh;
+    }
+    .box 
+    {
+        margin-left: 7.5vw;
+        margin-top: 3vh;
+        width: 25vw;
+        border-radius: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .box img 
+    {
+        margin-left: 7.5%;
+        width: 85%;
+        height: 30vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .box .back 
+    {
+        position: absolute;
+        left: 2vw;
+        top: 15vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .box .cart 
+    {
+        position: absolute;
+        left: 22vw;
+        top: 45vh;
+        width: 4vh;
+        height: 4vh;
+    }
+    .body h1 
+    {
+        width: 25vw;
+        margin-left: 7.5vw;
+        margin-top: 0vh;
+        font-size: 3vh;
+        text-align: center;
+    }
+    .body div p 
+    {
+        position: relative;
+        left: -27.5vw;
+        width: 25vw;
+        margin-top: 2vh;
+        margin-bottom: 0vh;
+        text-align: center;
+    }
+    .body button img 
+    {
+        margin-top: 1.2vh;
+        width: 4vh;
+    }
+    .body button
+    {
+        margin-left: 7.5vw;
+        width: 10vw;
+        font-size: 2vh;
+        border: none;
+        border-radius: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .body span 
+    {
+        background-color: #E4CDA7;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .body ul 
+    {
+        border-radius: 15px;
+        padding: 6vw;
+        margin-left: 7.5vw;
+        width: 73vw;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        list-style-type: none;
+    }
+    .body li 
+    {
+        padding-bottom: 0.3vh;
+        margin-bottom: 2vh;
+        border-bottom: 2px solid rgb(230, 230, 230);
+        height: 3vh;
+        font-size: 2.5vh;
+    }
+}

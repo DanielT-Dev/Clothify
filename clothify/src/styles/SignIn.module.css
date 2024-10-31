@@ -1,0 +1,69 @@
+@media screen and (max-width: 600px) 
+{
+    .image 
+    {
+        width: 100vw;
+        height: 30vh;
+    }
+    .slogan 
+    {
+        position: absolute;
+        text-align: center;
+        top: 11vh;
+        width: 100vw;
+    }
+    .box 
+    {
+        background-color: #F5F5F5;
+        position: absolute;
+        left: 10vw;
+        top: 33vh;
+        width: 80vw;
+        padding: 0.5vh;
+        border-radius: 15px;
+    }
+    .box h1 
+    {
+        text-align: center;
+    }
+    .box input 
+    {
+        background-color: #FFE6BC;
+        margin-left: 10%;
+        width: 80%;
+        height: 5vh;
+        border: none;
+        border-radius: 15px;
+        font-size: 2vh;
+        padding-left: 2vw;
+    }
+    .box p 
+    {
+        margin-left: 15%;
+        width: 70%;
+        text-align: center;
+        font-weight: 600;
+    }
+    .button 
+    {
+        position: releative;
+        margin-left: 5%;
+        width: 90%;
+        height: 6vh;
+        background-color: #1FAB89;
+        color: #9DF3C4;
+        border: none;
+        border-radius: 10px;
+        font-size: 3vh;
+        margin-bottom: 2vh;
+    }
+} 
+@media screen and (min-width: 600px) 
+{
+    
+}
+body 
+{
+    margin: 0px;
+    font-family: "Gothic A1", sans-serif
+}
