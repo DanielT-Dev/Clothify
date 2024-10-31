@@ -6,3 +6,4 @@
 #### - Clerk for user authentication
 #### - Appwrite for database storage
 #### - Stripe for real-time  secure payments
+#### - Vercel for web hosting
